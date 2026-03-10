@@ -277,6 +277,13 @@
       #stats { padding: 3rem 1.5rem; grid-template-columns: repeat(2,1fr); }
       footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
     }
+    .fade-up,
+.gallery-row img,
+.hero-photo-wrap {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
   </style>
 </head>
 <body>
