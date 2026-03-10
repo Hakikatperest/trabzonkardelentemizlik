@@ -476,6 +476,54 @@ footer p { font-size: 0.73rem; color: rgba(255,255,255,0.25); }
   #stats { padding: 3rem 1.5rem; grid-template-columns: repeat(2,1fr); }
   footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
 }
+  /* Scroll Reveal Animasyonları */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s cubic-bezier(.22,1,.36,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sağdan gelen */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.9s cubic-bezier(.22,1,.36,1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Soldan gelen */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.9s cubic-bezier(.22,1,.36,1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Zoom */
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(.9);
+  transition: all 0.9s cubic-bezier(.22,1,.36,1);
+}
+
+.reveal-zoom.visible {
+  opacity: 1;
+  transform: scale(1);
+}
 </style>
 </head>
 <body>
@@ -652,15 +700,25 @@ footer p { font-size: 0.73rem; color: rgba(255,255,255,0.25); }
 
 <script>
 // REVEAL ANİMASYONLARI
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1 });
+const revealElements = document.querySelectorAll(
+'.reveal, .reveal-left, .reveal-right, .reveal-zoom'
+);
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+
+  });
+}, {
+  threshold: 0.15
+});
+
+revealElements.forEach(el => {
+  revealObserver.observe(el);
+});
 
 // WHATSAPP FORM GÖNDERME
 function sendForm() {
