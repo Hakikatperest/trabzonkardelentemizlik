@@ -243,26 +243,7 @@
             pointer-events: none;
         }
         
-        /* Müşteri Logoları */
-        .client-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin: 60px 0;
-            opacity: 0.7;
-        }
-        .client-logos img {
-            height: 40px;
-            filter: grayscale(1);
-            transition: 0.3s;
-        }
-        .client-logos img:hover {
-            filter: grayscale(0);
-        }
-        
-        /* Görsel galeriler */
+        /* Görsel galeriler - tıklanabilir */
         .gallery-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -277,10 +258,36 @@
             box-shadow: var(--shadow-card);
             transition: 0.4s;
             border: 2px solid white;
+            cursor: pointer;
         }
         .gallery-row img:hover {
             transform: scale(1.05) translateY(-8px);
             box-shadow: var(--shadow-hover);
+        }
+        
+        /* Lightbox - görsel büyütme */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(255,255,255,0.2);
         }
         
         /* Premium Card Hover */
@@ -385,7 +392,7 @@
             border: 1px solid #d9e8ff;
         }
         
-        /* CTA - Premium Mavi Versiyon */
+        /* CTA - Premium Mavi */
         .cta-block {
             background: linear-gradient(135deg, #1a4b8c, #0f3a6b);
             border-radius: 70px;
@@ -464,12 +471,13 @@
             box-shadow: var(--shadow-card);
         }
         
-        /* footer */
+        /* Footer - mavi tonlarla uyumlu */
         .footer {
-            background: #0b1a28;
-            color: rgba(255,255,255,0.8);
+            background: linear-gradient(135deg, #0f2a44, #1a3a5a);
+            color: rgba(255,255,255,0.9);
             padding: 70px 0 30px;
             border-radius: 60px 60px 0 0;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.1);
         }
         .footer .container {
             display: flex;
@@ -481,6 +489,12 @@
         .footer-logo h3 {
             color: white;
             font-size: 2rem;
+            background: linear-gradient(90deg, #ffffff, #a0c4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .footer-logo span {
+            -webkit-text-fill-color: var(--green);
         }
         .footer-info p {
             color: rgba(255,255,255,0.8);
@@ -490,11 +504,19 @@
             color: var(--green);
             width: 30px;
         }
+        .footer-info a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer-info a:hover {
+            color: var(--green);
+        }
         .footer-bottom {
             text-align: center;
             margin-top: 60px;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.15);
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.6);
         }
         
         /* Sabit butonlar */
@@ -550,6 +572,11 @@
 </head>
 <body>
 
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
     <!-- Glassmorphism Header -->
     <header class="header">
         <div class="container">
@@ -583,23 +610,13 @@
         </div>
     </section>
 
-    <!-- Müşteri Logoları -->
-    <div class="container">
-        <div class="client-logos">
-            <img src="https://via.placeholder.com/120x40/1a4b8c/ffffff?text=Logo1" alt="client">
-            <img src="https://via.placeholder.com/120x40/25a56a/ffffff?text=Logo2" alt="client">
-            <img src="https://via.placeholder.com/120x40/0f3a6b/ffffff?text=Logo3" alt="client">
-            <img src="https://via.placeholder.com/120x40/1e8b58/ffffff?text=Logo4" alt="client">
-        </div>
-    </div>
-
     <!-- GALERİ 1 (görsel 1-4) -->
     <div class="container">
         <div class="gallery-row">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik1.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik2.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik3.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik4.webp" alt="Temizlik">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik1.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik2.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik3.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik4.webp" alt="Temizlik" onclick="openLightbox(this.src)">
         </div>
     </div>
 
@@ -620,10 +637,10 @@
     <!-- GALERİ 2 (görsel 5-8) -->
     <div class="container">
         <div class="gallery-row">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik5.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik6.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik7.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik8.webp" alt="Temizlik">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik5.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik6.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik7.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik8.webp" alt="Temizlik" onclick="openLightbox(this.src)">
         </div>
     </div>
 
@@ -640,10 +657,10 @@
     <!-- GALERİ 3 (görsel 9-12) -->
     <div class="container">
         <div class="gallery-row">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik9.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik10.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik11.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik12.webp" alt="Temizlik">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik9.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik10.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik11.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik12.webp" alt="Temizlik" onclick="openLightbox(this.src)">
         </div>
     </div>
 
@@ -675,10 +692,10 @@
     <!-- GALERİ 4 (görsel 13-16) -->
     <div class="container">
         <div class="gallery-row">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik13.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik14.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik15.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik16.webp" alt="Temizlik">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik13.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik14.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik15.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik16.webp" alt="Temizlik" onclick="openLightbox(this.src)">
         </div>
     </div>
 
@@ -693,13 +710,13 @@
     <!-- GALERİ 5 (görsel 17,19,20) -->
     <div class="container">
         <div class="gallery-row" style="grid-template-columns: repeat(3,1fr);">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik17.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik19.webp" alt="Temizlik">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik20.webp" alt="Temizlik">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik17.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik19.webp" alt="Temizlik" onclick="openLightbox(this.src)">
+            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik20.webp" alt="Temizlik" onclick="openLightbox(this.src)">
         </div>
     </div>
 
-    <!-- CTA - Premium Mavi Versiyon -->
+    <!-- CTA - Premium Mavi -->
     <div class="container">
         <div class="cta-block">
             <h2><i class="fas fa-phone-alt"></i> Profesyonel Çözüm İçin Arayın</h2>
@@ -753,7 +770,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - mavi uyumlu -->
     <footer class="footer">
         <div class="container">
             <div class="footer-logo">
@@ -761,7 +778,7 @@
             </div>
             <div class="footer-info">
                 <p><i class="fas fa-map-marker-alt"></i> Ayasofya Mah. Mustafa Reşit Sok. Zemin Kat, Trabzon</p>
-                <p><i class="fas fa-phone"></i> <a href="tel:05398723318" style="color:white;">0539 872 33 18</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:05398723318">0539 872 33 18</a></p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -771,6 +788,17 @@
 
     <!-- Section Divider -->
     <div class="section-divider"></div>
+
+    <!-- Lightbox JavaScript -->
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = src;
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+    </script>
 
     <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
