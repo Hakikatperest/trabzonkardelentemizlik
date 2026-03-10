@@ -1,615 +1,875 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Trabzon Temizlik Şirketleri | Trabzon Kardelen Temizlik</title>
-    <meta name="description" content="Trabzon ev, ofis, inşaat sonrası temizlikte kurumsal ve premium çözümler. 10+ yıl deneyim, profesyonel ekip, anında teklif.">
-    <meta name="keywords" content="Trabzon temizlik şirketleri, Trabzon temizlik firması, Trabzon ev temizliği, Trabzon ofis temizliği, Trabzon inşaat sonrası temizlik">
-    <link rel="canonical" href="https://www.trabzonkardelentemizlik.com.tr/">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Trabzon Kardelen Temizlik - Kurumsal Temizlik Hizmetleri">
-    <meta property="og:description" content="Trabzon merkezli premium temizlik şirketi. Ev, ofis, inşaat sonrası.">
-    
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* RESET - TAM SIfIRLAMA */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html, body {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #ffffff;
-            color: #1e3a5f;
-            line-height: 1.5;
-        }
-        .container {
-            width: 100%;
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* HEADER - SABİT */
-        .header {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #eef2f6;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            z-index: 1000;
-            width: 100%;
-        }
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #1a4b8c, #25a56a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            white-space: nowrap;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            background: #1a4b8c;
-            color: white;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-        .btn-green {
-            background: #25a56a;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(26,75,140,0.3);
-        }
-        
-        /* HERO */
-        .hero {
-            padding: 40px 0;
-        }
-        .hero .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        .hero h1 {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            line-height: 1.2;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #1a4b8c, #25a56a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            color: #2c4c73;
-            margin-bottom: 30px;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .hero-visual {
-            height: 400px;
-            border-radius: 30px;
-            background: url('https://www.trabzonkardelentemizlik.com/images/temizlik18.webp') center/cover;
-            box-shadow: 0 25px 40px rgba(0,0,0,0.1);
-        }
-        
-        /* HİZMET BÖLGELERİ */
-        .districts {
-            padding: 20px 0 40px;
-        }
-        .districts h2 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .district-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
-        .district-item {
-            background: #f0f7ff;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-weight: 500;
-            border: 1px solid #d0e2f5;
-            transition: 0.3s;
-        }
-        
-        /* GALERİ GRID */
-        .gallery-row {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin: 40px 0;
-        }
-        .gallery-row img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-        
-        /* HİZMETLER GRID */
-        .services {
-            padding: 20px 0;
-        }
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 25px;
-            margin: 30px 0;
-        }
-        .service-card {
-            background: white;
-            border-radius: 25px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-            border: 1px solid #eef2f6;
-            transition: 0.3s;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 40px rgba(26,75,140,0.1);
-        }
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #1a4b8c, #25a56a);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 2rem;
-        }
-        
-        /* İSTATİSTİK */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin: 50px 0;
-        }
-        .stat-item {
-            background: white;
-            border-radius: 30px;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-            border: 1px solid #eef2f6;
-        }
-        .stat-item .number {
-            font-size: 3.2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #1a4b8c, #25a56a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-        
-        /* ÖZELLİKLER */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin: 30px 0;
-        }
-        .feature-item {
-            background: white;
-            border-radius: 25px;
-            padding: 35px 20px;
-            text-align: center;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-        }
-        
-        /* YORUMLAR - Google vurgulu */
-        .testimonials {
-            background: #f5faff;
-            padding: 70px 0;
-        }
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .testimonial-card {
-            background: white;
-            border-radius: 30px;
-            padding: 35px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-        }
-        .google-badge {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            color: #4285F4;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        .stars {
-            color: #f5b342;
-            font-size: 1.5rem;
-            margin: 15px 0;
-        }
-        
-        /* FAQ */
-        .faq-item {
-            background: #f5faff;
-            border-radius: 30px;
-            padding: 30px 40px;
-            margin-bottom: 20px;
-            border-left: 8px solid #1a4b8c;
-        }
-        
-        /* CTA */
-        .cta-block {
-            background: linear-gradient(135deg, #1a4b8c, #0f3a6b);
-            border-radius: 50px;
-            padding: 70px 40px;
-            text-align: center;
-            color: white;
-            margin: 60px 0;
-        }
-        .cta-block h2 {
-            color: white;
-            -webkit-text-fill-color: white;
-            justify-content: center;
-        }
-        
-        /* FOOTER */
-        .footer {
-            background: linear-gradient(135deg, #0f2a44, #1a3a5a);
-            color: white;
-            padding: 60px 0 30px;
-            border-radius: 50px 50px 0 0;
-        }
-        
-        /* FIXED BUTTONS */
-        .fixed-call-btn, .fixed-wa-btn {
-            position: fixed;
-            bottom: 30px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: white;
-            text-decoration: none;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            z-index: 999;
-            border: 2px solid white;
-        }
-        .fixed-call-btn {
-            left: 30px;
-            background: #1a4b8c;
-        }
-        .fixed-wa-btn {
-            right: 30px;
-            background: #25a56a;
-        }
-        
-        /* LIGHTBOX */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-        }
-        .lightbox.active {
-            display: flex;
-        }
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-        
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1100px) {
-            .service-grid { grid-template-columns: repeat(3, 1fr); }
-            .gallery-row { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        @media (max-width: 900px) {
-            .hero .container { grid-template-columns: 1fr; }
-            .hero-visual { height: 300px; }
-            .service-grid { grid-template-columns: repeat(2, 1fr); }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
-            .testimonial-grid { grid-template-columns: 1fr; }
-        }
-        
-        @media (max-width: 600px) {
-            .header .container { height: 60px; }
-            .logo { font-size: 1.3rem; }
-            .btn { padding: 8px 18px; font-size: 0.9rem; }
-            
-            .gallery-row { grid-template-columns: 1fr; }
-            .gallery-row img { height: 250px; }
-            
-            .service-grid { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .features-grid { grid-template-columns: 1fr; }
-            
-            .district-item { padding: 10px 20px; font-size: 0.9rem; }
-            
-            .cta-block { padding: 50px 20px; }
-            .cta-block .btn { margin: 5px 0 !important; width: 100%; }
-            
-            .fixed-call-btn, .fixed-wa-btn { width: 50px; height: 50px; font-size: 1.5rem; bottom: 20px; }
-            .fixed-call-btn { left: 15px; }
-            .fixed-wa-btn { right: 15px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kardelen Temizlik – Trabzon</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Fraunces:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #1976d2;
+  --blue-mid: #2196f3;
+  --blue-light: #e3f2fd;
+  --blue-pale: #f0f8ff;
+  --sky: #64b5f6;
+  --white: #ffffff;
+  --gray-100: #f7f9fc;
+  --gray-200: #eef2f7;
+  --gray-400: #9eafc2;
+  --gray-600: #5a6d82;
+  --text: #111e2e;
+  --green: #2e7d52;
+  --green-light: #e8f5ee;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 4rem;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(25,118,210,0.08);
+  box-shadow: 0 1px 24px rgba(25,118,210,0.06);
+}
+.nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+.logo-mark {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: linear-gradient(140deg, var(--blue-mid) 0%, var(--blue) 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-mark svg { width: 20px; height: 20px; fill: white; }
+.logo-name {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-size: 1.2rem; font-weight: 700; color: var(--blue); letter-spacing: -0.01em;
+}
+.logo-name span { color: var(--text); font-style: normal; }
+.nav-menu { display: flex; align-items: center; gap: 0.2rem; list-style: none; }
+.nav-menu a {
+  display: block; padding: 0.45rem 0.9rem; border-radius: 8px;
+  font-size: 0.83rem; font-weight: 500; color: var(--gray-600);
+  text-decoration: none; transition: background 0.18s, color 0.18s;
+}
+.nav-menu a:hover { background: var(--blue-light); color: var(--blue); }
+.nav-btn {
+  background: var(--blue) !important; color: white !important;
+  border-radius: 8px !important; padding: 0.5rem 1.2rem !important;
+  font-weight: 600 !important; transition: background 0.2s, box-shadow 0.2s !important;
+  box-shadow: 0 2px 10px rgba(25,118,210,0.28) !important;
+}
+.nav-btn:hover { background: #1565c0 !important; box-shadow: 0 4px 18px rgba(25,118,210,0.4) !important; }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh; padding-top: 68px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: stretch; overflow: hidden;
+}
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem 4rem 5rem 4rem;
+  background: var(--white); position: relative;
+}
+.hero-left::after {
+  content: ''; position: absolute; right: 0; top: 10%; bottom: 10%;
+  width: 1px; background: linear-gradient(to bottom, transparent, var(--blue-light), transparent);
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 1.6rem;
+}
+.hero-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--blue); border-radius: 2px; }
+h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 700; line-height: 1.1; color: var(--text);
+  margin-bottom: 1.4rem; letter-spacing: -0.02em;
+}
+h1 em { font-style: italic; color: var(--blue); }
+.hero-desc {
+  font-size: 1.05rem; color: var(--gray-600); line-height: 1.75;
+  max-width: 420px; margin-bottom: 2.8rem; font-weight: 300;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: var(--blue); color: white;
+  padding: 0.85rem 1.8rem; border-radius: 10px;
+  font-size: 0.9rem; font-weight: 600; text-decoration: none;
+  box-shadow: 0 4px 16px rgba(25,118,210,0.35);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover { background: #1565c0; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(25,118,210,0.4); }
+.btn-primary svg { width: 16px; height: 16px; fill: white; }
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: var(--white); color: var(--text);
+  padding: 0.85rem 1.8rem; border-radius: 10px;
+  font-size: 0.9rem; font-weight: 600; text-decoration: none;
+  border: 1.5px solid var(--gray-200);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.btn-wa:hover { border-color: #25d366; color: #25d366; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,211,102,0.15); }
+.btn-wa svg { width: 18px; height: 18px; }
+.hero-trust { display: flex; gap: 2rem; }
+.trust-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.trust-num {
+  font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 700;
+  color: var(--blue); line-height: 1; letter-spacing: -0.02em;
+}
+.trust-label { font-size: 0.75rem; color: var(--gray-400); font-weight: 400; }
+.trust-sep { width: 1px; background: var(--gray-200); align-self: stretch; margin: 0.2rem 0; }
+
+.hero-right {
+  position: relative; overflow: hidden;
+  background: linear-gradient(145deg, #e3f2fd 0%, #bbdefb 60%, #90caf9 100%);
+}
+.hero-photo-wrap {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(160deg, rgba(227,242,253,0.4) 0%, transparent 60%),
+    url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80') center/cover no-repeat;
+}
+.hero-photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0.15) 0%, rgba(25,118,210,0.1) 100%);
+}
+.hero-card-float {
+  position: absolute; bottom: 2.5rem; left: 2rem;
+  background: white; border-radius: 16px; padding: 1.2rem 1.5rem;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+  min-width: 220px;
+}
+.hcf-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 0.5rem; }
+.hcf-stars { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.4rem; }
+.stars-svg { display: flex; gap: 2px; }
+.stars-svg svg { width: 14px; height: 14px; fill: #f59e0b; }
+.hcf-rating { font-size: 0.85rem; font-weight: 700; color: var(--text); }
+.hcf-count { font-size: 0.75rem; color: var(--gray-400); }
+.hero-badge-top {
+  position: absolute; top: 2rem; right: 2rem;
+  background: white; border-radius: 12px; padding: 0.9rem 1.2rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  text-align: center;
+}
+.hbt-num { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 700; color: var(--blue); line-height: 1; }
+.hbt-label { font-size: 0.65rem; color: var(--gray-400); margin-top: 0.2rem; }
+
+/* ─── SERVICES ─── */
+#hizmetler { background: var(--gray-100); padding: 7rem 4rem; }
+.section-head { max-width: 540px; margin-bottom: 3.5rem; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 1rem;
+}
+.eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--blue); }
+h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.2; color: var(--text); letter-spacing: -0.02em; }
+h2 em { font-style: italic; color: var(--blue); }
+.section-sub { margin-top: 0.8rem; color: var(--gray-600); font-size: 0.95rem; line-height: 1.7; font-weight: 300; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.sv {
+  background: white; border-radius: 18px; padding: 2rem;
+  border: 1px solid var(--gray-200);
+  transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+  position: relative; overflow: hidden;
+}
+.sv::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--blue-mid), var(--sky));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+}
+.sv:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(25,118,210,0.12); border-color: rgba(25,118,210,0.15); }
+.sv:hover::after { transform: scaleX(1); }
+.sv-icon {
+  width: 52px; height: 52px; border-radius: 14px;
+  background: var(--blue-light); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.4rem; transition: background 0.3s;
+}
+.sv:hover .sv-icon { background: var(--blue); }
+.sv-icon svg { width: 24px; height: 24px; fill: var(--blue); transition: fill 0.3s; }
+.sv:hover .sv-icon svg { fill: white; }
+.sv h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+.sv p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.72; font-weight: 300; }
+
+/* ─── PHOTO STRIP ─── */
+#photo-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  height: 320px; overflow: hidden;
+}
+.photo-panel {
+  position: relative; overflow: hidden; cursor: default;
+}
+.photo-panel img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  filter: brightness(0.88) saturate(1.05);
+}
+.photo-panel:hover img { transform: scale(1.06); filter: brightness(1) saturate(1.15); }
+.photo-panel-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 1.5rem 1.2rem 1rem;
+  background: linear-gradient(to top, rgba(10,30,55,0.7) 0%, transparent 100%);
+  color: white; font-size: 0.82rem; font-weight: 600;
+  opacity: 0; transform: translateY(6px); transition: opacity 0.3s, transform 0.3s;
+}
+.photo-panel:hover .photo-panel-label { opacity: 1; transform: translateY(0); }
+
+/* ─── STATS BAR ─── */
+#stats {
+  background: var(--blue); padding: 4rem;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem;
+}
+.st { text-align: center; }
+.st-num {
+  font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700;
+  color: white; line-height: 1; display: block; letter-spacing: -0.03em;
+}
+.st-suf { font-size: 1.8rem; color: var(--sky); }
+.st-label { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-top: 0.5rem; font-weight: 300; }
+.st-line { width: 30px; height: 2px; background: rgba(255,255,255,0.2); margin: 1rem auto 0; border-radius: 2px; }
+
+/* ─── PROCESS ─── */
+#surec { padding: 7rem 4rem; background: white; }
+.process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; margin-top: 3.5rem; position: relative; }
+.process-grid::before {
+  content: ''; position: absolute; top: 28px; left: 48px; right: 48px; height: 1px;
+  background: linear-gradient(to right, var(--blue-light), var(--sky), var(--blue-light));
+}
+.proc {
+  text-align: center; position: relative; padding: 0 0.5rem;
+}
+.proc-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--blue); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700;
+  margin: 0 auto 1.4rem; position: relative; z-index: 1;
+  box-shadow: 0 4px 16px rgba(25,118,210,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.proc:hover .proc-num { transform: scale(1.1); box-shadow: 0 8px 24px rgba(25,118,210,0.45); }
+.proc h4 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+.proc p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.65; font-weight: 300; }
+
+/* ─── WHY ─── */
+#neden {
+  background: var(--gray-100); padding: 7rem 4rem;
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem; align-items: center;
+}
+.why-photo {
+  border-radius: 24px; overflow: hidden; position: relative;
+  box-shadow: 0 20px 60px rgba(25,118,210,0.14);
+  aspect-ratio: 4/5;
+}
+.why-photo img { width: 100%; height: 100%; object-fit: cover; }
+.why-photo-badge {
+  position: absolute; bottom: 2rem; left: 2rem; right: 2rem;
+  background: white; border-radius: 14px; padding: 1.2rem 1.4rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  display: flex; align-items: center; gap: 1rem;
+}
+.wpb-icon {
+  width: 44px; height: 44px; background: var(--blue-light); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.wpb-icon svg { width: 22px; height: 22px; fill: var(--blue); }
+.wpb-text strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.wpb-text span { font-size: 0.75rem; color: var(--gray-400); }
+.why-right {}
+.why-right h2 { margin-bottom: 1.2rem; }
+.why-right p { color: var(--gray-600); line-height: 1.8; font-size: 0.95rem; font-weight: 300; margin-bottom: 2.5rem; }
+.feat-list { display: flex; flex-direction: column; gap: 1rem; }
+.fi {
+  display: flex; align-items: center; gap: 1rem;
+  background: white; border-radius: 14px; padding: 1rem 1.2rem;
+  border: 1px solid var(--gray-200);
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.fi:hover { border-color: rgba(25,118,210,0.3); transform: translateX(6px); box-shadow: 0 4px 16px rgba(25,118,210,0.08); }
+.fi-icon {
+  width: 40px; height: 40px; background: var(--blue-light); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.fi-icon svg { width: 18px; height: 18px; fill: var(--blue); }
+.fi-text strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.fi-text span { font-size: 0.78rem; color: var(--gray-400); }
+.fi-check { margin-left: auto; }
+.fi-check svg { width: 18px; height: 18px; fill: var(--green); }
+
+/* ─── TESTIMONIALS ─── */
+#yorumlar { padding: 7rem 4rem; background: white; }
+.test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+.tc {
+  background: var(--gray-100); border-radius: 20px; padding: 2rem;
+  border: 1px solid var(--gray-200);
+  transition: transform 0.28s, box-shadow 0.28s;
+}
+.tc:hover { transform: translateY(-5px); box-shadow: 0 14px 36px rgba(25,118,210,0.1); }
+.tc-stars { display: flex; gap: 3px; margin-bottom: 1.1rem; }
+.tc-stars svg { width: 15px; height: 15px; fill: #f59e0b; }
+.tc p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.78; font-style: italic; margin-bottom: 1.4rem; font-weight: 300; }
+.tc-author { display: flex; align-items: center; gap: 0.8rem; }
+.tc-av {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--sky), var(--blue));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700; color: white;
+}
+.tc-author strong { display: block; font-size: 0.85rem; font-weight: 700; color: var(--text); }
+.tc-author span { font-size: 0.73rem; color: var(--gray-400); }
+
+/* ─── CONTACT ─── */
+#iletisim { padding: 0; display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+.ct-left {
+  background: var(--blue); padding: 6rem 4rem;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.ct-left::before {
+  content: ''; position: absolute; top: -100px; right: -100px;
+  width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,0.05);
+}
+.ct-left::after {
+  content: ''; position: absolute; bottom: -80px; left: -80px;
+  width: 260px; height: 260px; border-radius: 50%; background: rgba(255,255,255,0.04);
+}
+.ct-left .eyebrow { color: var(--sky); margin-bottom: 1.2rem; }
+.ct-left .eyebrow::before { background: var(--sky); }
+.ct-left h2 { color: white; margin-bottom: 1rem; font-size: clamp(1.8rem,3vw,2.8rem); }
+.ct-left h2 em { color: var(--sky); }
+.ct-left > p { color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 0.95rem; font-weight: 300; margin-bottom: 3rem; position: relative; z-index: 1; }
+.cinfo { display: flex; flex-direction: column; gap: 1.4rem; position: relative; z-index: 1; }
+.ci { display: flex; align-items: flex-start; gap: 1rem; }
+.ci-ic {
+  width: 44px; height: 44px; background: rgba(255,255,255,0.12); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.ci-ic svg { width: 20px; height: 20px; fill: var(--sky); }
+.ci-body strong { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); margin-bottom: 0.25rem; }
+.ci-body span, .ci-body a { font-size: 0.92rem; color: rgba(255,255,255,0.82); font-weight: 300; }
+.ci-body a { text-decoration: none; transition: color 0.2s; }
+.ci-body a:hover { color: white; }
+.ct-right {
+  background: var(--gray-100); padding: 6rem 4rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.ct-right h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 700; color: var(--text); margin-bottom: 1.8rem; }
+.fg { margin-bottom: 1.1rem; }
+.fg label { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 0.45rem; }
+.fg input, .fg select, .fg textarea {
+  width: 100%; border: 1.5px solid var(--gray-200); border-radius: 10px;
+  padding: 0.8rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+  color: var(--text); background: white; outline: none;
+  transition: border-color 0.22s, box-shadow 0.22s;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(25,118,210,0.1); }
+.fg textarea { height: 95px; resize: none; }
+.fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.submit-btn {
+  display: block; width: 100%; padding: 1rem;
+  background: var(--blue); color: white; border: none; border-radius: 10px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700;
+  cursor: pointer; margin-top: 0.6rem;
+  box-shadow: 0 4px 16px rgba(25,118,210,0.32);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.submit-btn:hover { background: #1565c0; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(25,118,210,0.42); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #0a1929; padding: 2.2rem 4rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+}
+.fl { display: flex; align-items: center; gap: 0.6rem; }
+.fl-mark {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: var(--blue); display: flex; align-items: center; justify-content: center;
+}
+.fl-mark svg { width: 16px; height: 16px; fill: white; }
+.fl-name { font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 700; color: rgba(255,255,255,0.7); font-style: italic; }
+footer p { font-size: 0.73rem; color: rgba(255,255,255,0.25); }
+
+/* ─── FLOATING BUTTONS ─── */
+.fab-wa {
+  position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 999;
+  width: 54px; height: 54px; border-radius: 50%;
+  background: #25d366; display: flex; align-items: center; justify-content: center;
+  text-decoration: none; box-shadow: 0 4px 18px rgba(37,211,102,0.45);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.fab-wa:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,0.6); }
+.fab-wa svg { width: 26px; height: 26px; fill: white; }
+.fab-phone {
+  position: fixed; bottom: 1.8rem; right: 5.2rem; z-index: 999;
+  width: 54px; height: 54px; border-radius: 50%;
+  background: var(--blue); display: flex; align-items: center; justify-content: center;
+  text-decoration: none; box-shadow: 0 4px 18px rgba(25,118,210,0.4);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.fab-phone:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(25,118,210,0.55); }
+.fab-phone svg { width: 22px; height: 22px; fill: white; }
+
+/* ─── REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1); }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px){
+  nav { padding: 0 1.5rem; }
+  .nav-menu { display: none; }
+  #hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 4rem 1.5rem; }
+  .hero-right { height: 300px; }
+  #hizmetler, #surec, #yorumlar { padding: 5rem 1.5rem; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .process-grid { grid-template-columns: 1fr 1fr; }
+  .process-grid::before { display: none; }
+  #neden { grid-template-columns: 1fr; padding: 5rem 1.5rem; }
+  .why-photo { aspect-ratio: 16/9; }
+  .test-grid { grid-template-columns: 1fr; }
+  #iletisim { grid-template-columns: 1fr; }
+  .ct-left, .ct-right { padding: 4rem 1.5rem; }
+  #stats { padding: 3rem 1.5rem; grid-template-columns: repeat(2,1fr); }
+  #photo-strip { grid-template-columns: repeat(2,1fr); height: 240px; }
+  footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+}
+</style>
 </head>
 <body>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="">
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/905398723318" class="fab-wa" target="_blank" title="WhatsApp ile Yaz">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<a href="tel:05398723318" class="fab-phone" title="Ara">
+  <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"/></svg>
     </div>
+    <div class="logo-name"><span>Kardelen</span> Temizlik</div>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#hizmetler">Hizmetler</a></li>
+    <li><a href="#surec">Süreç</a></li>
+    <li><a href="#neden">Neden Biz</a></li>
+    <li><a href="#yorumlar">Yorumlar</a></li>
+    <li><a href="#iletisim" class="nav-btn">İletişim</a></li>
+  </ul>
+</nav>
 
-    <!-- STICKY HEADER -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">Kardelen Temizlik</div>
-            <a href="tel:05398723318" class="btn"><i class="fas fa-phone-alt"></i> Teklif Al</a>
-        </div>
-    </header>
-
-    <!-- Fixed Buttons -->
-    <a href="tel:05398723318" class="fixed-call-btn"><i class="fas fa-phone-alt"></i></a>
-    <a href="https://wa.me/905398723318" class="fixed-wa-btn"><i class="fab fa-whatsapp"></i></a>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Profesyonel Temizlik, Premium Kalite</h1>
-                <p>10 yılı aşkın deneyim, sigortalı personel, çevre dostu ürünler. Eviniz, ofisiniz ve inşaat sonrası için güvenilir çözümler.</p>
-                <div class="hero-buttons">
-                    <a href="tel:05398723318" class="btn"><i class="fas fa-phone-alt"></i> Hemen Teklif Al</a>
-                    <a href="https://wa.me/905398723318" class="btn btn-green"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                </div>
-            </div>
-            <div class="hero-visual"></div>
-        </div>
-    </section>
-
-    <!-- HİZMET BÖLGELERİ (hero altı) -->
-    <section class="districts">
-        <div class="container">
-            <h2><i class="fas fa-map-marker-alt" style="color:#25a56a;"></i> Hizmet Bölgelerimiz</h2>
-            <div class="district-cloud">
-                <span class="district-item">Ortahisar</span>
-                <span class="district-item">Akçaabat</span>
-                <span class="district-item">Of</span>
-                <span class="district-item">Araklı</span>
-                <span class="district-item">Maçka</span>
-                <span class="district-item">Sürmene</span>
-                <span class="district-item">Vakfıkebir</span>
-                <span class="district-item">Beşikdüzü</span>
-                <span class="district-item">Tonya</span>
-                <span class="district-item">Arsin</span>
-                <span class="district-item">Yomra</span>
-                <span class="district-item">Hayrat</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERİ 1 -->
-    <div class="container">
-        <div class="gallery-row">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik1.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik2.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik3.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik4.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-        </div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Trabzon'da Profesyonel Temizlik</div>
+    <h1>Temiz bir<br>ev, <em>özgür</em><br>bir yaşam.</h1>
+    <p class="hero-desc">Kardelen Temizlik ekibi; ev, ofis ve iş yerlerinizi hijyenik, güvenli ve profesyonel biçimde arındırıyor. Siz hayatınıza odaklanın, gerisini biz halledelim.</p>
+    <div class="hero-actions">
+      <a href="tel:05398723318" class="btn-primary">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        0539 872 33 18
+      </a>
+      <a href="https://wa.me/905398723318" target="_blank" class="btn-wa">
+        <svg viewBox="0 0 24 24" style="fill:#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
     </div>
-
-    <!-- HİZMETLERİMİZ -->
-    <section class="services">
-        <div class="container">
-            <h2><i class="fas fa-broom" style="color:#25a56a;"></i> Hizmetlerimiz</h2>
-            <div class="service-grid">
-                <div class="service-card"><div class="service-icon"><i class="fas fa-home"></i></div><h3>Ev Temizliği</h3><p>Haftalık, aylık paketler</p></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-building"></i></div><h3>Ofis Temizliği</h3><p>İş yeriniz hijyenik</p></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-tools"></i></div><h3>İnşaat Sonrası</h3><p>Yapı tozundan arınma</p></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-people-arrows"></i></div><h3>Apartman Temizliği</h3><p>Ortak alanlar</p></div>
-                <div class="service-card"><div class="service-icon"><i class="fas fa-wind"></i></div><h3>Detaylı Temizlik</h3><p>Halı, koltuk, cam</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERİ 2 -->
-    <div class="container">
-        <div class="gallery-row">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik5.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik6.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik7.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik8.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-        </div>
+    <div class="hero-trust">
+      <div class="trust-item">
+        <span class="trust-num" data-target="500">0<span style="color:var(--sky)">+</span></span>
+        <span class="trust-label">Mutlu müşteri</span>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <span class="trust-num" data-target="10">0<span style="color:var(--sky)">+</span></span>
+        <span class="trust-label">Yıllık deneyim</span>
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <span class="trust-num">%100</span>
+        <span class="trust-label">Memnuniyet</span>
+      </div>
     </div>
-
-    <!-- İSTATİSTİK + SAYAÇ -->
-    <div class="container">
-        <div class="stats-grid" id="counter-stats">
-            <div class="stat-item"><span class="number" data-target="1250">0</span><h3>Mutlu Müşteri</h3></div>
-            <div class="stat-item"><span class="number" data-target="15">0</span><h3>Uzman Personel</h3></div>
-            <div class="stat-item"><span class="number" data-target="10">0</span><h3>Yıl Deneyim</h3></div>
-            <div class="stat-item"><span class="number" data-target="98">0</span><h3>Memnuniyet %</h3></div>
-        </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-wrap"></div>
+    <div class="hero-photo-overlay"></div>
+    <div class="hero-badge-top">
+      <div class="hbt-num">4.9</div>
+      <div class="stars-svg" style="justify-content:center;margin:.3rem 0;">
+        <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:#f59e0b"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:#f59e0b"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:#f59e0b"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:#f59e0b"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24" style="width:12px;height:12px;fill:#f59e0b"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <div class="hbt-label">Müşteri puanı</div>
     </div>
-
-    <!-- NEDEN KARDELEN -->
-    <section style="background:#f5faff; padding:60px 0;">
-        <div class="container">
-            <h2><i class="fas fa-medal" style="color:#25a56a;"></i> Neden Kardelen?</h2>
-            <div class="features-grid">
-                <div class="feature-item"><i class="fas fa-user-tie" style="font-size:2.5rem; color:#25a56a; margin-bottom:15px;"></i><h3>Profesyonel Ekip</h3><p>Eğitimli, sigortalı personel</p></div>
-                <div class="feature-item"><i class="fas fa-tag" style="font-size:2.5rem; color:#25a56a; margin-bottom:15px;"></i><h3>Uygun Fiyat</h3><p>Şeffaf fiyat garantisi</p></div>
-                <div class="feature-item"><i class="fas fa-clock" style="font-size:2.5rem; color:#25a56a; margin-bottom:15px;"></i><h3>Hızlı Hizmet</h3><p>Acil durumlarda 2 saatte</p></div>
-                <div class="feature-item"><i class="fas fa-shield-alt" style="font-size:2.5rem; color:#25a56a; margin-bottom:15px;"></i><h3>Güvenilir</h3><p>Referanslar, tam memnuniyet</p></div>
-            </div>
+    <div class="hero-card-float">
+      <div class="hcf-label">Sigortalı & Güvenli</div>
+      <div class="hcf-stars">
+        <div class="stars-svg">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
         </div>
-    </section>
-
-    <!-- GOOGLE YORUMLARI -->
-    <section class="testimonials">
-        <div class="container">
-            <h2><i class="fab fa-google" style="color:#4285F4;"></i> Google Yorumları</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="google-badge"><i class="fab fa-google"></i> Google</div>
-                    <div class="stars">★★★★★</div>
-                    <p>"İnşaat sonrası temizlik harikaydı. Camlar lekesiz, fayanslar pırıl."</p>
-                    <h4>— Ahmet K.</h4>
-                </div>
-                <div class="testimonial-card">
-                    <div class="google-badge"><i class="fab fa-google"></i> Google</div>
-                    <div class="stars">★★★★★</div>
-                    <p>"Ofisimize haftalık geliyorlar. Çok titiz ve güvenilir."</p>
-                    <h4>— Zeynep T.</h4>
-                </div>
-                <div class="testimonial-card">
-                    <div class="google-badge"><i class="fab fa-google"></i> Google</div>
-                    <div class="stars">★★★★★</div>
-                    <p>"Ev temizliğinde butik hizmet, ekip çok kibar."</p>
-                    <h4>— Mehmet E.</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERİ 3 -->
-    <div class="container">
-        <div class="gallery-row">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik13.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik14.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik15.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-            <img src="https://www.trabzonkardelentemizlik.com/images/temizlik16.webp" alt="Temizlik" onclick="openLightbox(this.src)">
-        </div>
+        <span class="hcf-rating">4.9 / 5.0</span>
+      </div>
+      <div class="hcf-count">500'den fazla değerlendirme</div>
     </div>
+  </div>
+</section>
 
-    <!-- CTA -->
-    <div class="container">
-        <div class="cta-block">
-            <h2><i class="fas fa-phone-alt"></i> Hemen Teklif Alın</h2>
-            <p style="font-size:1.3rem; margin:20px 0;">Profesyonel çözüm için bizi arayın</p>
-            <a href="tel:05398723318" class="btn" style="background:white; color:#1a4b8c;"><i class="fas fa-phone-alt"></i> 0539 872 33 18</a>
-            <a href="https://wa.me/905398723318" class="btn btn-green" style="margin-left:15px;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        </div>
+<!-- PHOTO STRIP -->
+<div id="photo-strip">
+  <div class="photo-panel">
+    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt="Ev temizliği">
+    <div class="photo-panel-label">Ev Temizliği</div>
+  </div>
+  <div class="photo-panel">
+    <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&q=80" alt="Ofis temizliği">
+    <div class="photo-panel-label">Ofis Temizliği</div>
+  </div>
+  <div class="photo-panel">
+    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80" alt="Derin temizlik">
+    <div class="photo-panel-label">Derin Temizlik</div>
+  </div>
+  <div class="photo-panel">
+    <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?w=600&q=80" alt="Koltuk yıkama">
+    <div class="photo-panel-label">Koltuk & Halı Yıkama</div>
+  </div>
+</div>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="st reveal">
+    <span class="stat-icon-wrap" style="display:block;margin-bottom:.5rem;">
+      <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:rgba(255,255,255,0.4)"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+    </span>
+    <span class="st-num"><span class="counter" data-target="500">0</span><span class="st-suf">+</span></span>
+    <div class="st-label">Mutlu Müşteri</div>
+    <div class="st-line"></div>
+  </div>
+  <div class="st reveal">
+    <span class="stat-icon-wrap" style="display:block;margin-bottom:.5rem;">
+      <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:rgba(255,255,255,0.4)"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    </span>
+    <span class="st-num"><span class="counter" data-target="1200">0</span><span class="st-suf">+</span></span>
+    <div class="st-label">Tamamlanan İş</div>
+    <div class="st-line"></div>
+  </div>
+  <div class="st reveal">
+    <span class="stat-icon-wrap" style="display:block;margin-bottom:.5rem;">
+      <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:rgba(255,255,255,0.4)"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+    </span>
+    <span class="st-num"><span class="counter" data-target="10">0</span><span class="st-suf">+</span></span>
+    <div class="st-label">Yıllık Deneyim</div>
+    <div class="st-line"></div>
+  </div>
+  <div class="st reveal">
+    <span class="stat-icon-wrap" style="display:block;margin-bottom:.5rem;">
+      <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:rgba(255,255,255,0.4)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+    </span>
+    <span class="st-num"><span class="counter" data-target="100">0</span><span class="st-suf">%</span></span>
+    <div class="st-label">Memnuniyet Garantisi</div>
+    <div class="st-line"></div>
+  </div>
+</section>
+
+<!-- HİZMETLER -->
+<section id="hizmetler">
+  <div class="section-head reveal">
+    <div class="eyebrow">Hizmetlerimiz</div>
+    <h2>Her mekân için<br><em>doğru çözüm</em></h2>
+    <p class="section-sub">Konuttan kurumsal alanlara, periyodik bakımdan derin temizliğe kadar ihtiyacınıza özel hizmet sunuyoruz.</p>
+  </div>
+  <div class="services-grid">
+    <div class="sv reveal">
+      <div class="sv-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+      <h3>Ev Temizliği</h3>
+      <p>Yaşam alanlarınızın her köşesini titizlikle temizliyoruz. Mutfak, banyo, yatak odası — eksiksiz hijyen sağlıyoruz.</p>
     </div>
+    <div class="sv reveal">
+      <div class="sv-icon"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg></div>
+      <h3>Ofis & İş Yeri</h3>
+      <p>Kurumsal alanları düzenli ve hijyenik tutarak çalışan verimliliğini ve müşteri izlenimini güçlendiriyoruz.</p>
+    </div>
+    <div class="sv reveal">
+      <div class="sv-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+      <h3>Derin Temizlik</h3>
+      <p>Gözden kaçan noktaları, cihaz aralarını ve gizli köşeleri özel ekipmanlarla derinlemesine arındırıyoruz.</p>
+    </div>
+    <div class="sv reveal">
+      <div class="sv-icon"><svg viewBox="0 0 24 24"><path d="M21 9V7h-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h13v14z"/></svg></div>
+      <h3>Koltuk & Halı Yıkama</h3>
+      <p>Tekstil yüzeyleri, halı ve kilimleri profesyonel makinelerle yıkayarak kir, leke ve akarları gideriyoruz.</p>
+    </div>
+    <div class="sv reveal">
+      <div class="sv-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+      <h3>İnşaat Sonrası</h3>
+      <p>Tadilat ve inşaat sonrasında oluşan boya, alçı izi ve ince tozları eksiksiz temizleyip mekânı teslim ediyoruz.</p>
+    </div>
+    <div class="sv reveal">
+      <div class="sv-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg></div>
+      <h3>Periyodik Bakım</h3>
+      <p>Haftalık ya da aylık düzenli temizlik planı ile mekânınız sürekli bakımlı ve hijyenik kalır.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- FAQ -->
-    <section style="background:#f5faff; padding:60px 0;">
-        <div class="container">
-            <h2><i class="fas fa-circle-question" style="color:#25a56a;"></i> Sıkça Sorulan Sorular</h2>
-            <div class="faq-item"><h3>Fiyat teklifi nasıl alırım?</h3><p>Arayarak veya WhatsApp'tan yazabilirsiniz. Keşif sonrası sabit fiyat veriyoruz.</p></div>
-            <div class="faq-item"><h3>Personeller sigortalı mı?</h3><p>Evet, tüm çalışanlarımız sigortalı ve güvenlik kontrollüdür.</p></div>
-            <div class="faq-item"><h3>Hangi bölgelere hizmet veriyorsunuz?</h3><p>Trabzon merkez ve tüm ilçelerine hizmet vermekteyiz.</p></div>
-        </div>
-    </section>
+<!-- PROCESS -->
+<section id="surec">
+  <div class="section-head reveal">
+    <div class="eyebrow">Nasıl Çalışıyoruz</div>
+    <h2>4 adımda <em>tertemiz</em></h2>
+  </div>
+  <div class="process-grid">
+    <div class="proc reveal">
+      <div class="proc-num">1</div>
+      <h4>Bizi Arayın</h4>
+      <p>Telefon veya WhatsApp ile ulaşın, ihtiyaçlarınızı kısaca anlatın.</p>
+    </div>
+    <div class="proc reveal">
+      <div class="proc-num">2</div>
+      <h4>Teklif Alın</h4>
+      <p>Mekânınıza özel, net ve şeffaf fiyat teklifini hızlıca oluşturuyoruz.</p>
+    </div>
+    <div class="proc reveal">
+      <div class="proc-num">3</div>
+      <h4>Ekip Gelir</h4>
+      <p>Sigortalı ve deneyimli ekibimiz randevu saatinde kapınızda.</p>
+    </div>
+    <div class="proc reveal">
+      <div class="proc-num">4</div>
+      <h4>Onaylayın</h4>
+      <p>Kalite kontrolü yapılır; tamamen memnun kalana kadar yanınızdayız.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:30px;">
-                <h3 style="color:white; font-size:1.8rem;">Kardelen Temizlik</h3>
-                <div>
-                    <p><i class="fas fa-map-marker-alt" style="color:#25a56a;"></i> Ayasofya Mah. Trabzon</p>
-                    <p><i class="fas fa-phone" style="color:#25a56a;"></i> <a href="tel:05398723318" style="color:white; text-decoration:none;">0539 872 33 18</a></p>
-                </div>
-            </div>
-            <div style="text-align:center; margin-top:50px; padding-top:30px; border-top:1px solid rgba(255,255,255,0.2);">
-                © 2026 Trabzon Kardelen Temizlik
-            </div>
-        </div>
-    </footer>
+<!-- NEDEN BİZ -->
+<section id="neden">
+  <div class="why-photo reveal">
+    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80" alt="Profesyonel temizlik ekibi">
+    <div class="why-photo-badge">
+      <div class="wpb-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+      </div>
+      <div class="wpb-text">
+        <strong>Sigortalı & Güvenli Hizmet</strong>
+        <span>Tüm ekibimiz tam kapsamlı sigortalıdır</span>
+      </div>
+    </div>
+  </div>
+  <div class="why-right reveal">
+    <div class="eyebrow">Neden Kardelen</div>
+    <h2>Trabzon'da <em>güven</em><br>ile tercih edilen marka</h2>
+    <p>10 yılı aşkın deneyimimiz, eğitimli ekibimiz ve kalite standartlarımızla Trabzon'da yüzlerce müşterinin tercih ettiği temizlik firmasıyız.</p>
+    <div class="feat-list">
+      <div class="fi">
+        <div class="fi-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 19.82A1 1 0 005.22 21C6.66 19 8.9 17 12 17c4 0 4.44 3 7 3 .12-2.12-1.63-5-5-6C17 11 16 10 17 8z"/></svg></div>
+        <div class="fi-text"><strong>Çevre Dostu Ürünler</strong><span>İnsan ve doğa sağlığına duyarlı, onaylı ürünler</span></div>
+        <div class="fi-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+      </div>
+      <div class="fi">
+        <div class="fi-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+        <div class="fi-text"><strong>Sigortalı Ekip</strong><span>Her personelimiz sigortalı, güvenilir ve eğitimli</span></div>
+        <div class="fi-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+      </div>
+      <div class="fi">
+        <div class="fi-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/></svg></div>
+        <div class="fi-text"><strong>Dakiklik Garantisi</strong><span>Randevu saatine tam zamanında, her seferinde</span></div>
+        <div class="fi-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+      </div>
+      <div class="fi">
+        <div class="fi-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+        <div class="fi-text"><strong>Şeffaf Fiyatlandırma</strong><span>Gizli masraf yok, söylenen fiyat ödenen fiyat</span></div>
+        <div class="fi-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Lightbox JS -->
-    <script>
-        function openLightbox(src) {
-            document.getElementById('lightbox').classList.add('active');
-            document.getElementById('lightbox-img').src = src;
-        }
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-    </script>
+<!-- YORUMLAR -->
+<section id="yorumlar">
+  <div class="section-head reveal" style="max-width:100%">
+    <div class="eyebrow">Müşteri Yorumları</div>
+    <h2>Onlar <em>anlatsın</em></h2>
+  </div>
+  <div class="test-grid">
+    <div class="tc reveal">
+      <div class="tc-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <p>"Evimi ilk kez bu kadar temiz gördüm. Ekip son derece özenli ve dakikti. Artık düzenli olarak geliyorlar."</p>
+      <div class="tc-author"><div class="tc-av">AY</div><div><strong>Ayşe Yılmaz</strong><span>Ev Temizliği · Trabzon</span></div></div>
+    </div>
+    <div class="tc reveal">
+      <div class="tc-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <p>"Ofisimizin aylık temizliğini Kardelen yapıyor. Her seferinde aynı titizliği görüyoruz. Kurumsal iş yerlerine kesinlikle tavsiye ederim."</p>
+      <div class="tc-author"><div class="tc-av">MK</div><div><strong>Mehmet Kaya</strong><span>Ofis Temizliği · Trabzon</span></div></div>
+    </div>
+    <div class="tc reveal">
+      <div class="tc-stars">
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <p>"İnşaat sonrası temizlik için aradım. Hem fiyat hem de sonuç beklentimin çok üzerindeydi. Harika bir ekip."</p>
+      <div class="tc-author"><div class="tc-av">FD</div><div><strong>Fatma Demir</strong><span>İnşaat Sonrası · Trabzon</span></div></div>
+    </div>
+  </div>
+</section>
 
-    <!-- SAYAÇ EFEKTİ -->
-    <script>
-        function startCounters() {
-            const counters = document.querySelectorAll('.stat-item .number');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                let current = 0;
-                const increment = target / 30;
-                const update = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        counter.innerText = target + (counter.getAttribute('data-target') == '98' ? '%' : '');
-                        clearInterval(update);
-                    } else {
-                        counter.innerText = Math.floor(current);
-                    }
-                }, 30);
-            });
-        }
-        window.addEventListener('load', startCounters);
-    </script>
+<!-- CONTACT -->
+<section id="iletisim">
+  <div class="ct-left">
+    <div class="eyebrow">İletişim</div>
+    <h2>Ücretsiz teklif<br><em>alın</em></h2>
+    <p>Mekânınıza özel keşif ve fiyat teklifi için bizi arayın ya da formu doldurun. Kısa sürede dönüş yapıyoruz.</p>
+    <div class="cinfo">
+      <div class="ci">
+        <div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+        <div class="ci-body"><strong>Adres</strong><span>Ayasofya Mahallesi, Mustafa Reşit Sokak, Zemin Kat – Trabzon</span></div>
+      </div>
+      <div class="ci">
+        <div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+        <div class="ci-body"><strong>Telefon</strong><a href="tel:05398723318">0539 872 33 18</a></div>
+      </div>
+      <div class="ci">
+        <div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+        <div class="ci-body"><strong>WhatsApp</strong><a href="https://wa.me/905398723318" target="_blank">Mesaj gönderin →</a></div>
+      </div>
+      <div class="ci">
+        <div class="ci-ic"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+        <div class="ci-body"><strong>Çalışma Saatleri</strong><span>Her gün 08:00 – 20:00</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="ct-right">
+    <h3>Teklif Formu</h3>
+    <div class="fg-row">
+      <div class="fg"><label>Ad Soyad</label><input type="text" placeholder="Adınız Soyadınız"></div>
+      <div class="fg"><label>Telefon</label><input type="tel" placeholder="0539 000 00 00"></div>
+    </div>
+    <div class="fg">
+      <label>Hizmet Türü</label>
+      <select>
+        <option value="">Seçiniz...</option>
+        <option>Ev Temizliği</option>
+        <option>Ofis & İş Yeri Temizliği</option>
+        <option>Derin Temizlik</option>
+        <option>Koltuk & Halı Yıkama</option>
+        <option>İnşaat Sonrası Temizlik</option>
+        <option>Periyodik Bakım</option>
+      </select>
+    </div>
+    <div class="fg"><label>Notunuz (isteğe bağlı)</label><textarea placeholder="Mekânınız veya özel isteğiniz hakkında bilgi verebilirsiniz..."></textarea></div>
+    <button class="submit-btn" onclick="sendForm(this)">Teklif İste</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">
+    <div class="fl-mark"><svg viewBox="0 0 24 24"><path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"/></svg></div>
+    <div class="fl-name">Kardelen Temizlik</div>
+  </div>
+  <p>© 2025 Kardelen Temizlik — Trabzon. Tüm hakları saklıdır.</p>
+  <p>Ayasofya Mah., Mustafa Reşit Sok. — 0539 872 33 18</p>
+</footer>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
+});
+
+// Reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 70); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Counters
+function animCount(el, target, dur = 1600) {
+  const start = performance.now();
+  const tick = now => {
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(ease * target);
+    if (p < 1) requestAnimationFrame(tick);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(tick);
+}
+// Hero trust counters
+document.querySelectorAll('.trust-num[data-target]').forEach(el => {
+  const target = +el.dataset.target;
+  const suffix = el.querySelector('span') ? el.querySelector('span').outerHTML : '';
+  const tObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const span = el.querySelector('span');
+        const num = document.createTextNode('0');
+        el.innerHTML = '';
+        el.appendChild(num);
+        if (span) el.appendChild(span);
+        animCount(num, target);
+        tObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  tObs.observe(el);
+});
+// Stats counters
+const sObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.counter').forEach(c => animCount(c, +c.dataset.target));
+      sObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+const statsEl = document.getElementById('stats');
+if (statsEl) sObs.observe(statsEl);
+
+// Form
+function sendForm(btn) {
+  const orig = btn.textContent;
+  btn.textContent = 'Talebiniz Alındı — Sizi Arayacağız';
+  btn.style.background = 'var(--green)';
+  setTimeout(() => { btn.textContent = orig; btn.style.background = ''; }, 4000);
+}
+</script>
 </body>
 </html>
