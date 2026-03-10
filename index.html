@@ -1,768 +1,423 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kardelen Temizlik – Trabzon Temizlik Şirketi</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Fraunces:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root {
-  --blue: #1976d2;
-  --blue-mid: #2196f3;
-  --blue-light: #e3f2fd;
-  --blue-pale: #f0f8ff;
-  --sky: #64b5f6;
-  --white: #ffffff;
-  --gray-100: #f7f9fc;
-  --gray-200: #eef2f7;
-  --gray-400: #9eafc2;
-  --gray-600: #5a6d82;
-  --text: #111e2e;
-  --green: #2e7d52;
-  --green-light: #e8f5ee;
-  --whatsapp: #25a56a;
-  --whatsapp-dark: #1e8b57;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kardelen Temizlik – Trabzon | Scroll Premium</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Fraunces:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
-body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
+    :root {
+      --blue: #1976d2;
+      --blue-mid: #2196f3;
+      --blue-light: #e3f2fd;
+      --blue-pale: #f0f8ff;
+      --sky: #64b5f6;
+      --white: #ffffff;
+      --gray-100: #f7f9fc;
+      --gray-200: #eef2f7;
+      --gray-400: #9eafc2;
+      --gray-600: #5a6d82;
+      --text: #111e2e;
+      --green: #2e7d52;
+      --green-light: #e8f5ee;
+      --whatsapp: #25a56a;
+      --whatsapp-dark: #1e8b57;
+    }
 
-/* ========== 1️⃣ YENİ ÜST MENÜ (HEADER) ========== */
-.header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(25,118,210,0.08);
-  padding: 0.8rem 4rem;
-  box-shadow: 0 1px 24px rgba(25,118,210,0.06);
-  animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  transform-origin: top;
-}
-@keyframes slideDown {
-  0% { opacity: 0; transform: translateY(-100%) scaleY(0.9); }
-  100% { opacity: 1; transform: translateY(0) scaleY(1); }
-}
-.header .container {
-  max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;
-}
-.logo {
-  font-family: 'Fraunces', serif; font-style: italic;
-  font-size: 1.5rem; font-weight: 700; color: var(--blue);
-  letter-spacing: -0.01em;
-}
-.logo span { color: var(--text); font-style: normal; }
-.header .btn {
-  background: var(--blue); color: white; padding: 0.6rem 1.8rem; border-radius: 8px;
-  font-size: 0.9rem; font-weight: 600; text-decoration: none;
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  box-shadow: 0 4px 16px rgba(25,118,210,0.3);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.header .btn:hover { background: #1565c0; transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 24px rgba(25,118,210,0.4); }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
 
-/* ========== 2️⃣ SABİT BÜYÜK WHATSAPP & ARAMA BUTONLARI ========== */
-.fixed-call-btn, .fixed-wa-btn {
-  position: fixed; bottom: 120px; width: 80px; height: 80px;
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 2.8rem; color: white; z-index: 999; text-decoration: none;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.3); border: 3px solid white;
-  animation: glowPulse 2s infinite ease-in-out, float 4s infinite ease-in-out;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  opacity: 0; transform: scale(0) translateY(20px);
-  animation: glowPulse 2s infinite ease-in-out, float 4s infinite ease-in-out, popIn 0.8s cubic-bezier(0.34, 1.56, 0.64,1) forwards;
-  animation-delay: 0.2s, 0s, 0.2s;
-}
-@keyframes popIn {
-  0% { opacity: 0; transform: scale(0) translateY(20px); }
-  100% { opacity: 1; transform: scale(1) translateY(0); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 10px rgba(255,255,255,0.5), 0 15px 35px rgba(0,0,0,0.3); }
-  50% { box-shadow: 0 0 30px rgba(255,255,255,0.9), 0 20px 40px rgba(0,0,0,0.4); }
-  100% { box-shadow: 0 0 10px rgba(255,255,255,0.5), 0 15px 35px rgba(0,0,0,0.3); }
-}
-.fixed-call-btn { left: 30px; background: #1a4b8c; animation-delay: 0.3s, 0s, 0.3s; }
-.fixed-wa-btn { right: 30px; background: var(--whatsapp); animation-delay: 0.4s, 0s, 0.4s; }
-.fixed-call-btn:hover, .fixed-wa-btn:hover { transform: scale(1.1) translateY(-5px); animation: none; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
 
-/* ========== HERO ========== */
-#hero {
-  min-height: 100vh; padding-top: 80px;
-  display: grid; grid-template-columns: 1fr 1fr;
-  align-items: stretch; overflow: hidden;
-}
-.hero-left {
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 5rem 4rem;
-  background: var(--white); position: relative;
-  animation: slideFromLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-@keyframes slideFromLeft {
-  0% { opacity: 0; transform: translateX(-80px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-.hero-left::after {
-  content: ''; position: absolute; right: 0; top: 10%; bottom: 10%;
-  width: 1px; background: linear-gradient(to bottom, transparent, var(--blue-light), transparent);
-}
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--blue);
-  margin-bottom: 1.6rem;
-}
-.hero-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--blue); border-radius: 2px; }
-h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(2.8rem, 5vw, 4.2rem);
-  font-weight: 700; line-height: 1.1; color: var(--text);
-  margin-bottom: 1.4rem; letter-spacing: -0.02em;
-}
-h1 em { font-style: italic; color: var(--blue); }
-.hero-desc {
-  font-size: 1.05rem; color: var(--gray-600); line-height: 1.75;
-  max-width: 420px; margin-bottom: 2.8rem; font-weight: 300;
-}
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
-.btn-primary {
-  display: inline-flex; align-items: center; gap: 0.55rem;
-  background: var(--blue); color: white;
-  padding: 0.85rem 1.8rem; border-radius: 10px;
-  font-size: 0.9rem; font-weight: 600; text-decoration: none;
-  box-shadow: 0 4px 16px rgba(25,118,210,0.35);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.btn-primary:hover { background: #1565c0; transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 24px rgba(25,118,210,0.4); }
-.btn-wa {
-  display: inline-flex; align-items: center; gap: 0.55rem;
-  background: var(--whatsapp) !important; color: white !important;
-  padding: 0.85rem 1.8rem; border-radius: 10px;
-  font-size: 0.9rem; font-weight: 600; text-decoration: none;
-  box-shadow: 0 4px 16px rgba(37,165,106,0.35);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.btn-wa:hover { background: var(--whatsapp-dark) !important; transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 24px rgba(37,165,106,0.4); }
-.hero-right {
-  position: relative; overflow: hidden;
-  background: linear-gradient(145deg, #e3f2fd 0%, #bbdefb 60%, #90caf9 100%);
-  animation: slideFromRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-@keyframes slideFromRight {
-  0% { opacity: 0; transform: translateX(80px); }
-  100% { opacity: 1; transform: translateX(0); }
-}
-.hero-photo-wrap {
-  position: absolute; inset: 0;
-  background: linear-gradient(160deg, rgba(227,242,253,0.4) 0%, transparent 60%),
-              url('https://www.trabzonkardelentemizlik.com/images/temizlik18.webp') center/cover no-repeat;
-  transform: scale(1.1);
-  animation: zoomIn 8s infinite alternate ease-in-out;
-}
-@keyframes zoomIn {
-  0% { transform: scale(1.1); }
-  100% { transform: scale(1.2); }
-}
-.hero-photo-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(255,255,255,0.15) 0%, rgba(25,118,210,0.1) 100%);
-}
+    /* ----- sabit header + butonlar (orijinal) ----- */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(25,118,210,0.08);
+      padding: 0.8rem 4rem;
+      box-shadow: 0 1px 24px rgba(25,118,210,0.06);
+      animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes slideDown {
+      0% { opacity: 0; transform: translateY(-100%) scaleY(0.9); }
+      100% { opacity: 1; transform: translateY(0) scaleY(1); }
+    }
+    .header .container {
+      max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Fraunces', serif; font-style: italic;
+      font-size: 1.5rem; font-weight: 700; color: var(--blue);
+      letter-spacing: -0.01em;
+    }
+    .logo span { color: var(--text); font-style: normal; }
+    .header .btn {
+      background: var(--blue); color: white; padding: 0.6rem 1.8rem; border-radius: 8px;
+      font-size: 0.9rem; font-weight: 600; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      box-shadow: 0 4px 16px rgba(25,118,210,0.3);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .header .btn:hover { background: #1565c0; transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 24px rgba(25,118,210,0.4); }
 
-/* ========== GALERİ (8 GÖRSEL) ========== */
-.gallery-row {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-  padding: 60px 4rem; background: var(--gray-100);
-}
-.gallery-row img {
-  width: 100%; height: 250px; object-fit: cover; border-radius: 20px;
-  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  border: 2px solid white;
-  opacity: 0; transform: translateY(30px) scale(0.95);
-  animation: fadeUpGallery 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.gallery-row img:nth-child(1) { animation-delay: 0.1s; }
-.gallery-row img:nth-child(2) { animation-delay: 0.2s; }
-.gallery-row img:nth-child(3) { animation-delay: 0.3s; }
-.gallery-row img:nth-child(4) { animation-delay: 0.4s; }
-.gallery-row img:nth-child(5) { animation-delay: 0.5s; }
-.gallery-row img:nth-child(6) { animation-delay: 0.6s; }
-.gallery-row img:nth-child(7) { animation-delay: 0.7s; }
-.gallery-row img:nth-child(8) { animation-delay: 0.8s; }
-@keyframes fadeUpGallery {
-  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-.gallery-row img:hover { 
-  transform: scale(1.08) translateY(-8px); 
-  box-shadow: 0 25px 40px rgba(25,118,210,0.4); 
-  border-color: var(--blue); 
-}
+    /* sabit çağrı butonları */
+    .fixed-call-btn, .fixed-wa-btn {
+      position: fixed; bottom: 120px; width: 80px; height: 80px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem; color: white; z-index: 999; text-decoration: none;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3); border: 3px solid white;
+      animation: glowPulse 2s infinite ease-in-out, float 4s infinite ease-in-out, popIn 0.8s cubic-bezier(0.34, 1.56, 0.64,1) forwards;
+      animation-delay: 0.2s, 0s, 0.2s;
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0) translateY(20px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes glowPulse {
+      0% { box-shadow: 0 0 10px rgba(255,255,255,0.5), 0 15px 35px rgba(0,0,0,0.3); }
+      50% { box-shadow: 0 0 30px rgba(255,255,255,0.9), 0 20px 40px rgba(0,0,0,0.4); }
+      100% { box-shadow: 0 0 10px rgba(255,255,255,0.5), 0 15px 35px rgba(0,0,0,0.3); }
+    }
+    .fixed-call-btn { left: 30px; background: #1a4b8c; animation-delay: 0.3s, 0s, 0.3s; }
+    .fixed-wa-btn { right: 30px; background: var(--whatsapp); animation-delay: 0.4s, 0s, 0.4s; }
+    .fixed-call-btn:hover, .fixed-wa-btn:hover { transform: scale(1.1) translateY(-5px); animation: none; }
 
-/* ========== STATS ========== */
-#stats {
-  background: var(--blue); padding: 4rem; display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem;
-}
-.st { 
-  text-align: center; 
-  opacity: 0; transform: translateY(30px);
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.st:nth-child(1) { animation-delay: 0.1s; }
-.st:nth-child(2) { animation-delay: 0.2s; }
-.st:nth-child(3) { animation-delay: 0.3s; }
-.st:nth-child(4) { animation-delay: 0.4s; }
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.st:hover { transform: translateY(-10px); }
-.st-num {
-  font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700;
-  color: white; line-height: 1; display: block;
-}
-.st-suf { font-size: 1.8rem; color: var(--sky); }
-.st-label { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-top: 0.5rem; font-weight: 300; }
-.st-line { width: 30px; height: 2px; background: rgba(255,255,255,0.2); margin: 1rem auto 0; border-radius: 2px; }
+    /* HERO (ilk ekran animasyonu hazır) */
+    #hero {
+      min-height: 100vh; padding-top: 80px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: stretch; overflow: hidden;
+    }
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 4rem; background: var(--white); position: relative;
+      animation: slideFromLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes slideFromLeft {
+      0% { opacity: 0; transform: translateX(-80px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    .hero-right {
+      position: relative; overflow: hidden;
+      background: linear-gradient(145deg, #e3f2fd 0%, #bbdefb 60%, #90caf9 100%);
+      animation: slideFromRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes slideFromRight {
+      0% { opacity: 0; transform: translateX(80px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    .hero-photo-wrap {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(227,242,253,0.4) 0%, transparent 60%),
+                  url('https://www.trabzonkardelentemizlik.com/images/temizlik18.webp') center/cover no-repeat;
+      transform: scale(1.1);
+      animation: zoomIn 8s infinite alternate ease-in-out;
+    }
+    @keyframes zoomIn {
+      0% { transform: scale(1.1); }
+      100% { transform: scale(1.2); }
+    }
+    .hero-left::after { content: ''; position: absolute; right: 0; top: 10%; bottom: 10%; width: 1px; background: linear-gradient(to bottom, transparent, var(--blue-light), transparent); }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.6rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--blue); border-radius: 2px; }
+    h1 { font-family: 'Fraunces', serif; font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 700; line-height: 1.1; color: var(--text); margin-bottom: 1.4rem; letter-spacing: -0.02em; }
+    h1 em { font-style: italic; color: var(--blue); }
+    .hero-desc { font-size: 1.05rem; color: var(--gray-600); line-height: 1.75; max-width: 420px; margin-bottom: 2.8rem; font-weight: 300; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+    .btn-primary, .btn-wa { display: inline-flex; align-items: center; gap: 0.55rem; padding: 0.85rem 1.8rem; border-radius: 10px; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .btn-primary { background: var(--blue); color: white; box-shadow: 0 4px 16px rgba(25,118,210,0.35); }
+    .btn-primary:hover { background: #1565c0; transform: translateY(-2px) scale(1.02); }
+    .btn-wa { background: var(--whatsapp) !important; color: white !important; box-shadow: 0 4px 16px rgba(37,165,106,0.35); }
+    .btn-wa:hover { background: var(--whatsapp-dark) !important; transform: translateY(-2px) scale(1.02); }
 
-/* ========== HİZMETLER ========== */
-#hizmetler { background: var(--gray-100); padding: 7rem 4rem; }
-.section-head { max-width: 540px; margin-bottom: 3.5rem; }
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--blue); margin-bottom: 1rem;
-}
-.eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--blue); }
-h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.2; color: var(--text); letter-spacing: -0.02em; }
-h2 em { font-style: italic; color: var(--blue); }
-.section-sub { margin-top: 0.8rem; color: var(--gray-600); font-size: 0.95rem; line-height: 1.7; font-weight: 300; }
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.sv {
-  background: white; border-radius: 18px; padding: 2rem;
-  border: 1px solid var(--gray-200);
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  opacity: 0; transform: translateY(30px);
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.sv:nth-child(1) { animation-delay: 0.15s; }
-.sv:nth-child(2) { animation-delay: 0.25s; }
-.sv:nth-child(3) { animation-delay: 0.35s; }
-.sv:nth-child(4) { animation-delay: 0.45s; }
-.sv:nth-child(5) { animation-delay: 0.55s; }
-.sv:nth-child(6) { animation-delay: 0.65s; }
-.sv:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 20px 40px rgba(25,118,210,0.15); border-color: var(--blue-light); }
-.sv-icon {
-  width: 52px; height: 52px; border-radius: 14px;
-  background: var(--blue-light); display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.4rem; font-size: 24px; color: var(--blue);
-  transition: all 0.3s;
-}
-.sv:hover .sv-icon { background: var(--blue); color: white; transform: rotate(360deg); }
-.sv h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
-.sv p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.72; font-weight: 300; }
+    /* ----- ☀️ TÜM BÖLÜMLER İÇİN YENİ SCROLL ANİMASYONU (aşağıdan yukarıya premium) ----- */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 1.1s cubic-bezier(0.19, 1, 0.22, 1), transform 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-/* ========== SÜREÇ ========== */
-#surec { padding: 7rem 4rem; background: white; }
-.process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; margin-top: 3.5rem; position: relative; }
-.proc { 
-  text-align: center; 
-  opacity: 0; transform: translateY(30px);
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.proc:nth-child(1) { animation-delay: 0.1s; }
-.proc:nth-child(2) { animation-delay: 0.2s; }
-.proc:nth-child(3) { animation-delay: 0.3s; }
-.proc:nth-child(4) { animation-delay: 0.4s; }
-.proc-num {
-  width: 56px; height: 56px; border-radius: 50%;
-  background: var(--blue); color: white;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700;
-  margin: 0 auto 1.4rem; box-shadow: 0 4px 16px rgba(25,118,210,0.3);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.proc:hover .proc-num { transform: scale(1.15) rotate(8deg); box-shadow: 0 8px 24px rgba(25,118,210,0.45); }
-.proc h4 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
-.proc p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.65; font-weight: 300; }
+    /* Galeri grid ekstra yumuşaklık */
+    .gallery-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 60px 4rem; background: var(--gray-100); }
+    .gallery-row img { width: 100%; height: 250px; object-fit: cover; border-radius: 20px; transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 2px solid white; }
+    .gallery-row img:hover { transform: scale(1.08) translateY(-8px); box-shadow: 0 25px 40px rgba(25,118,210,0.4); border-color: var(--blue); }
 
-/* ========== NEDEN BİZ ========== */
-#neden {
-  background: var(--gray-100); padding: 7rem 4rem;
-  display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem; align-items: center;
-}
-.why-photo {
-  border-radius: 24px; overflow: hidden; position: relative;
-  box-shadow: 0 20px 60px rgba(25,118,210,0.14);
-  aspect-ratio: 4/5;
-  opacity: 0; transform: translateX(-30px);
-  animation: slideFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.why-photo img { 
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 8s ease;
-}
-.why-photo:hover img { transform: scale(1.1); }
-.why-photo-badge {
-  position: absolute; bottom: 2rem; left: 2rem; right: 2rem;
-  background: white; border-radius: 14px; padding: 1.2rem 1.4rem;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
-  display: flex; align-items: center; gap: 1rem;
-  transform: translateY(20px); opacity: 0;
-  animation: slideUpBadge 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.5s;
-}
-@keyframes slideUpBadge {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.wpb-icon {
-  width: 44px; height: 44px; background: var(--blue-light); border-radius: 12px;
-  display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--blue);
-}
-.wpb-text strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--text); }
-.wpb-text span { font-size: 0.75rem; color: var(--gray-400); }
-.why-right {
-  opacity: 0; transform: translateX(30px);
-  animation: slideFromRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.feat-list { display: flex; flex-direction: column; gap: 1rem; }
-.fi {
-  display: flex; align-items: center; gap: 1rem;
-  background: white; border-radius: 14px; padding: 1rem 1.2rem;
-  border: 1px solid var(--gray-200);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  opacity: 0; transform: translateX(-20px);
-  animation: slideFromLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.fi:nth-child(1) { animation-delay: 0.2s; }
-.fi:nth-child(2) { animation-delay: 0.3s; }
-.fi:nth-child(3) { animation-delay: 0.4s; }
-.fi:nth-child(4) { animation-delay: 0.5s; }
-.fi:hover { border-color: rgba(25,118,210,0.3); transform: translateX(6px) scale(1.02); box-shadow: 0 4px 16px rgba(25,118,210,0.08); }
-.fi-icon {
-  width: 40px; height: 40px; background: var(--blue-light); border-radius: 10px;
-  display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--blue);
-}
+    /* Stats */
+    #stats { background: var(--blue); padding: 4rem; display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+    .st { text-align: center; }
+    .st-num { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700; color: white; line-height: 1; display: block; }
+    .st-suf { font-size: 1.8rem; color: var(--sky); }
+    .st-label { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-top: 0.5rem; font-weight: 300; }
+    .st-line { width: 30px; height: 2px; background: rgba(255,255,255,0.2); margin: 1rem auto 0; border-radius: 2px; }
 
-/* ========== YORUMLAR ========== */
-#yorumlar { padding: 7rem 4rem; background: white; }
-.test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
-.tc {
-  background: var(--gray-100); border-radius: 20px; padding: 2rem;
-  border: 1px solid var(--gray-200);
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  opacity: 0; transform: translateY(30px);
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.tc:nth-child(1) { animation-delay: 0.15s; }
-.tc:nth-child(2) { animation-delay: 0.3s; }
-.tc:nth-child(3) { animation-delay: 0.45s; }
-.tc:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 14px 36px rgba(25,118,210,0.15); }
-.tc-stars { color: #f59e0b; font-size: 1.2rem; margin-bottom: 1.1rem; letter-spacing: 3px; }
-.tc p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.78; font-style: italic; margin-bottom: 1.4rem; font-weight: 300; }
-.tc-author { display: flex; align-items: center; gap: 0.8rem; }
-.tc-av {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--sky), var(--blue));
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700; color: white;
-}
+    /* Hizmetler */
+    #hizmetler { background: var(--gray-100); padding: 7rem 4rem; }
+    .section-head { max-width: 540px; margin-bottom: 3.5rem; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; }
+    .eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--blue); }
+    h2 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.2; color: var(--text); letter-spacing: -0.02em; }
+    h2 em { font-style: italic; color: var(--blue); }
+    .section-sub { margin-top: 0.8rem; color: var(--gray-600); font-size: 0.95rem; line-height: 1.7; font-weight: 300; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .sv { background: white; border-radius: 18px; padding: 2rem; border: 1px solid var(--gray-200); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .sv:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 20px 40px rgba(25,118,210,0.15); border-color: var(--blue-light); }
+    .sv-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; font-size: 24px; color: var(--blue); transition: all 0.3s; }
+    .sv:hover .sv-icon { background: var(--blue); color: white; transform: rotate(360deg); }
+    .sv h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+    .sv p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.72; font-weight: 300; }
 
-/* ========== İLETİŞİM ========== */
-#iletisim { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
-.ct-left {
-  background: var(--blue); padding: 6rem 4rem;
-  display: flex; flex-direction: column; justify-content: center;
-  opacity: 0; transform: translateX(-30px);
-  animation: slideFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.ct-left .eyebrow { color: var(--sky); }
-.ct-left .eyebrow::before { background: var(--sky); }
-.ct-left h2 { color: white; }
-.ct-left h2 em { color: var(--sky); }
-.ct-left > p { color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 0.95rem; margin-bottom: 3rem; }
-.cinfo { display: flex; flex-direction: column; gap: 1.4rem; }
-.ci { 
-  display: flex; align-items: flex-start; gap: 1rem;
-  opacity: 0; transform: translateY(20px);
-  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.ci:nth-child(1) { animation-delay: 0.2s; }
-.ci:nth-child(2) { animation-delay: 0.3s; }
-.ci-ic {
-  width: 44px; height: 44px; background: rgba(255,255,255,0.12); border-radius: 12px;
-  display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--sky);
-  border: 1px solid rgba(255,255,255,0.15);
-}
-.ci-body strong { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; color: var(--sky); margin-bottom: 0.25rem; }
-.ci-body span, .ci-body a { font-size: 0.92rem; color: rgba(255,255,255,0.82); font-weight: 300; }
-.ci-body a { text-decoration: none; }
-.ci-body a:hover { color: white; }
-.ct-right {
-  background: var(--gray-100); padding: 6rem 4rem;
-  display: flex; flex-direction: column; justify-content: center;
-  opacity: 0; transform: translateX(30px);
-  animation: slideFromRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.ct-right h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 700; color: var(--text); margin-bottom: 1.8rem; }
-.fg { margin-bottom: 1.1rem; }
-.fg label {
-  display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--gray-400); margin-bottom: 0.45rem;
-}
-.fg input, .fg select, .fg textarea {
-  width: 100%; border: 1.5px solid var(--gray-200); border-radius: 10px;
-  padding: 0.8rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
-  color: var(--text); background: white; outline: none;
-  transition: all 0.3s;
-}
-.fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--blue); transform: scale(1.02); box-shadow: 0 0 0 4px rgba(25,118,210,0.1); }
-.fg textarea { height: 95px; resize: none; }
-.fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.submit-btn {
-  display: block; width: 100%; padding: 1rem;
-  background: var(--whatsapp) !important; color: white; border: none; border-radius: 10px;
-  font-size: 0.95rem; font-weight: 700; cursor: pointer; margin-top: 0.6rem;
-  box-shadow: 0 4px 16px rgba(37,165,106,0.32);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.submit-btn:hover { background: var(--whatsapp-dark) !important; transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 24px rgba(37,165,106,0.42); }
+    /* Süreç */
+    #surec { padding: 7rem 4rem; background: white; }
+    .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; margin-top: 3.5rem; }
+    .proc { text-align: center; }
+    .proc-num { width: 56px; height: 56px; border-radius: 50%; background: var(--blue); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; margin: 0 auto 1.4rem; box-shadow: 0 4px 16px rgba(25,118,210,0.3); transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .proc:hover .proc-num { transform: scale(1.15) rotate(8deg); box-shadow: 0 8px 24px rgba(25,118,210,0.45); }
+    .proc h4 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+    .proc p { font-size: 0.82rem; color: var(--gray-600); line-height: 1.65; font-weight: 300; }
 
-/* ========== FOOTER ========== */
-footer {
-  background: #0a1929; padding: 2.2rem 4rem;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-  opacity: 0; transform: translateY(30px);
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s;
-}
-.fl { display: flex; align-items: center; gap: 0.6rem; }
-.fl-mark {
-  width: 30px; height: 30px; border-radius: 8px;
-  background: var(--blue); display: flex; align-items: center; justify-content: center;
-  color: white; font-size: 16px; transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-footer:hover .fl-mark { transform: rotate(360deg) scale(1.1); }
-.fl-name { font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 700; color: rgba(255,255,255,0.7); font-style: italic; }
-footer p { font-size: 0.73rem; color: rgba(255,255,255,0.25); }
+    /* Neden biz */
+    #neden { background: var(--gray-100); padding: 7rem 4rem; display: grid; grid-template-columns: 1.1fr 1fr; gap: 5rem; align-items: center; }
+    .why-photo { border-radius: 24px; overflow: hidden; position: relative; box-shadow: 0 20px 60px rgba(25,118,210,0.14); aspect-ratio: 4/5; }
+    .why-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 8s ease; }
+    .why-photo:hover img { transform: scale(1.1); }
+    .why-photo-badge { position: absolute; bottom: 2rem; left: 2rem; right: 2rem; background: white; border-radius: 14px; padding: 1.2rem 1.4rem; box-shadow: 0 8px 28px rgba(0,0,0,0.12); display: flex; align-items: center; gap: 1rem; }
+    .wpb-icon { width: 44px; height: 44px; background: var(--blue-light); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--blue); }
+    .wpb-text strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--text); }
+    .wpb-text span { font-size: 0.75rem; color: var(--gray-400); }
+    .feat-list { display: flex; flex-direction: column; gap: 1rem; }
+    .fi { display: flex; align-items: center; gap: 1rem; background: white; border-radius: 14px; padding: 1rem 1.2rem; border: 1px solid var(--gray-200); transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .fi:hover { border-color: rgba(25,118,210,0.3); transform: translateX(6px) scale(1.02); box-shadow: 0 4px 16px rgba(25,118,210,0.08); }
+    .fi-icon { width: 40px; height: 40px; background: var(--blue-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--blue); }
 
-/* ========== REVEAL ANİMASYONLARI (YEDEK) ========== */
-.reveal {
-  opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1);
-}
-.reveal.visible { opacity: 1; transform: none; }
+    /* Yorumlar */
+    #yorumlar { padding: 7rem 4rem; background: white; }
+    .test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+    .tc { background: var(--gray-100); border-radius: 20px; padding: 2rem; border: 1px solid var(--gray-200); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .tc:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 14px 36px rgba(25,118,210,0.15); }
+    .tc-stars { color: #f59e0b; font-size: 1.2rem; margin-bottom: 1.1rem; letter-spacing: 3px; }
+    .tc p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.78; font-style: italic; margin-bottom: 1.4rem; font-weight: 300; }
+    .tc-author { display: flex; align-items: center; gap: 0.8rem; }
+    .tc-av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sky), var(--blue)); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 700; color: white; }
 
-/* ========== RESPONSIVE ========== */
-@media(max-width:960px){
-  .header { padding: 0.8rem 1.5rem; }
-  .fixed-call-btn, .fixed-wa-btn { width: 60px; height: 60px; font-size: 2rem; bottom: 100px; }
-  .fixed-call-btn { left: 15px; }
-  .fixed-wa-btn { right: 15px; }
-  #hero { grid-template-columns: 1fr; }
-  .hero-left { padding: 4rem 1.5rem; }
-  .hero-right { height: 300px; }
-  .gallery-row { grid-template-columns: repeat(2, 1fr); padding: 2rem 1.5rem; }
-  #hizmetler, #surec, #yorumlar { padding: 5rem 1.5rem; }
-  .services-grid { grid-template-columns: 1fr 1fr; }
-  .process-grid { grid-template-columns: 1fr 1fr; }
-  #neden { grid-template-columns: 1fr; padding: 5rem 1.5rem; }
-  .test-grid { grid-template-columns: 1fr; }
-  #iletisim { grid-template-columns: 1fr; }
-  .ct-left, .ct-right { padding: 4rem 1.5rem; }
-  #stats { padding: 3rem 1.5rem; grid-template-columns: repeat(2,1fr); }
-  footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
-}
-  /* Scroll Reveal Animasyonları */
+    /* İletişim */
+    #iletisim { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+    .ct-left { background: var(--blue); padding: 6rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+    .ct-left .eyebrow { color: var(--sky); }
+    .ct-left .eyebrow::before { background: var(--sky); }
+    .ct-left h2 { color: white; }
+    .ct-left h2 em { color: var(--sky); }
+    .ct-left > p { color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 0.95rem; margin-bottom: 3rem; }
+    .cinfo { display: flex; flex-direction: column; gap: 1.4rem; }
+    .ci { display: flex; align-items: flex-start; gap: 1rem; }
+    .ci-ic { width: 44px; height: 44px; background: rgba(255,255,255,0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--sky); border: 1px solid rgba(255,255,255,0.15); }
+    .ci-body strong { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; color: var(--sky); margin-bottom: 0.25rem; }
+    .ci-body span, .ci-body a { font-size: 0.92rem; color: rgba(255,255,255,0.82); font-weight: 300; text-decoration: none; }
+    .ci-body a:hover { color: white; }
+    .ct-right { background: var(--gray-100); padding: 6rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+    .ct-right h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 700; color: var(--text); margin-bottom: 1.8rem; }
+    .fg { margin-bottom: 1.1rem; }
+    .fg label { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 0.45rem; }
+    .fg input, .fg select, .fg textarea { width: 100%; border: 1.5px solid var(--gray-200); border-radius: 10px; padding: 0.8rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); background: white; outline: none; transition: all 0.3s; }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--blue); transform: scale(1.02); box-shadow: 0 0 0 4px rgba(25,118,210,0.1); }
+    .fg textarea { height: 95px; resize: none; }
+    .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .submit-btn { display: block; width: 100%; padding: 1rem; background: var(--whatsapp) !important; color: white; border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 700; cursor: pointer; margin-top: 0.6rem; box-shadow: 0 4px 16px rgba(37,165,106,0.32); transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .submit-btn:hover { background: var(--whatsapp-dark) !important; transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 24px rgba(37,165,106,0.42); }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.9s cubic-bezier(.22,1,.36,1);
-}
+    /* Footer */
+    footer { background: #0a1929; padding: 2.2rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .fl { display: flex; align-items: center; gap: 0.6rem; }
+    .fl-mark { width: 30px; height: 30px; border-radius: 8px; background: var(--blue); display: flex; align-items: center; justify-content: center; color: white; font-size: 16px; transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    footer:hover .fl-mark { transform: rotate(360deg) scale(1.1); }
+    .fl-name { font-family: 'Fraunces', serif; font-size: 0.95rem; font-weight: 700; color: rgba(255,255,255,0.7); font-style: italic; }
+    footer p { font-size: 0.73rem; color: rgba(255,255,255,0.25); }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Sağdan gelen */
-.reveal-right {
-  opacity: 0;
-  transform: translateX(60px);
-  transition: all 0.9s cubic-bezier(.22,1,.36,1);
-}
-
-.reveal-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Soldan gelen */
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-60px);
-  transition: all 0.9s cubic-bezier(.22,1,.36,1);
-}
-
-.reveal-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Zoom */
-.reveal-zoom {
-  opacity: 0;
-  transform: scale(.9);
-  transition: all 0.9s cubic-bezier(.22,1,.36,1);
-}
-
-.reveal-zoom.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-</style>
+    /* responsive */
+    @media(max-width:960px){
+      .header { padding: 0.8rem 1.5rem; }
+      .fixed-call-btn, .fixed-wa-btn { width: 60px; height: 60px; font-size: 2rem; bottom: 100px; }
+      .fixed-call-btn { left: 15px; }
+      .fixed-wa-btn { right: 15px; }
+      #hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 4rem 1.5rem; }
+      .hero-right { height: 300px; }
+      .gallery-row { grid-template-columns: repeat(2, 1fr); padding: 2rem 1.5rem; }
+      #hizmetler, #surec, #yorumlar { padding: 5rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      #neden { grid-template-columns: 1fr; padding: 5rem 1.5rem; }
+      .test-grid { grid-template-columns: 1fr; }
+      #iletisim { grid-template-columns: 1fr; }
+      .ct-left, .ct-right { padding: 4rem 1.5rem; }
+      #stats { padding: 3rem 1.5rem; grid-template-columns: repeat(2,1fr); }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ========== 1️⃣ YENİ ÜST MENÜ ========== -->
-<header class="header">
-  <div class="container">
-    <div class="logo">Kardelen <span>Temizlik</span></div>
-    <a href="tel:05398723318" class="btn">
-      <i class="fas fa-phone-alt"></i> Teklif Al
-    </a>
-  </div>
-</header>
-
-<!-- ========== 2️⃣ SABİT BÜYÜK BUTONLAR ========== -->
-<a href="tel:05398723318" class="fixed-call-btn" title="Hemen Ara">
-  <i class="fas fa-phone-alt"></i>
-</a>
-<a href="https://wa.me/905398723318" class="fixed-wa-btn" target="_blank" title="WhatsApp'tan Yaz">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow reveal">Trabzon'da Profesyonel Temizlik</div>
-    <h1 class="reveal delay-1">Temiz bir<br>ev, <em>özgür</em><br>bir yaşam.</h1>
-    <p class="hero-desc reveal delay-2">Kardelen Temizlik ekibi; ev, ofis ve iş yerlerinizi hijyenik, güvenli ve profesyonel biçimde arındırıyor. Siz hayatınıza odaklanın, gerisini biz halledelim.</p>
-    <div class="hero-actions reveal delay-3">
-      <a href="tel:05398723318" class="btn-primary"><i class="fas fa-phone-alt"></i> 0539 872 33 18</a>
-      <!-- Girişteki WhatsApp butonu yeşil yapıldı -->
-      <a href="https://wa.me/905398723318" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <header class="header">
+    <div class="container">
+      <div class="logo">Kardelen <span>Temizlik</span></div>
+      <a href="tel:05398723318" class="btn"><i class="fas fa-phone-alt"></i> Teklif Al</a>
     </div>
-    <!-- İstenen "0+ Mutlu müşteri, 0+ Yıllık deneyim, %100 Memnuniyet" bölümü silindi -->
-  </div>
-  <div class="hero-right">
-    <div class="hero-photo-wrap"></div>
-    <div class="hero-photo-overlay"></div>
-  </div>
-</section>
+  </header>
 
-<!-- ========== 3️⃣ GALERİ (8 GÖRSEL) - Görseller kaynak sayfadan alındı ========== -->
-<div class="gallery-row">
-  <img src="https://www.trabzonkardelentemizlik.com/images/temizlik1.webp" alt="Temizlik 1">
-  <img src="https://www.trabzonkardelentemizlik.com/images/temizlik2.webp" alt="Temizlik 2">
-  <img src="https://www.trabzonkardelentemizlik.com/images/temizlik3.webp" alt="Temizlik 3">
-  <img src="https://www.trabzonkardelentemizlik.com/images/temizlik4.webp" alt="Temizlik 4">
-  <img src="https://www.trabzonkardelentemizlik.com/images/temizlik5.webp" alt="Temizlik 5">
-  <img src="https://www.trabzonkardelentemizlik.com/images/temizlik6.webp" alt="Temizlik 6">
-  <img src="https://www.trabzonkardelentemizlik.com/images/temizlik7.webp" alt="Temizlik 7">
-  <img src="https://www.trabzonkardelentemizlik.com/images/temizlik8.webp" alt="Temizlik 8">
-</div>
+  <a href="tel:05398723318" class="fixed-call-btn" title="Hemen Ara"><i class="fas fa-phone-alt"></i></a>
+  <a href="https://wa.me/905398723318" class="fixed-wa-btn" target="_blank" title="WhatsApp'tan Yaz"><i class="fab fa-whatsapp"></i></a>
 
-<!-- STATS -->
-<section id="stats">
-  <div class="st reveal">
-    <span class="st-num"><span class="counter" data-target="500">0</span><span class="st-suf">+</span></span>
-    <div class="st-label">Mutlu Müşteri</div>
-    <div class="st-line"></div>
-  </div>
-  <div class="st reveal">
-    <span class="st-num"><span class="counter" data-target="1200">0</span><span class="st-suf">+</span></span>
-    <div class="st-label">Tamamlanan İş</div>
-    <div class="st-line"></div>
-  </div>
-  <div class="st reveal">
-    <span class="st-num"><span class="counter" data-target="10">0</span><span class="st-suf">+</span></span>
-    <div class="st-label">Yıllık Deneyim</div>
-    <div class="st-line"></div>
-  </div>
-  <div class="st reveal">
-    <span class="st-num"><span class="counter" data-target="100">0</span><span class="st-suf">%</span></span>
-    <div class="st-label">Memnuniyet Garantisi</div>
-    <div class="st-line"></div>
-  </div>
-</section>
-
-<!-- HİZMETLER -->
-<section id="hizmetler">
-  <div class="section-head reveal">
-    <div class="eyebrow">Hizmetlerimiz</div>
-    <h2>Her mekân için<br><em>doğru çözüm</em></h2>
-    <p class="section-sub">Konuttan kurumsal alanlara, periyodik bakımdan derin temizliğe kadar ihtiyacınıza özel hizmet sunuyoruz.</p>
-  </div>
-  <div class="services-grid">
-    <div class="sv reveal"><div class="sv-icon"><i class="fas fa-home"></i></div><h3>Ev Temizliği</h3><p>Yaşam alanlarınızın her köşesini titizlikle temizliyoruz.</p></div>
-    <div class="sv reveal"><div class="sv-icon"><i class="fas fa-building"></i></div><h3>Ofis & İş Yeri</h3><p>Kurumsal alanları düzenli ve hijyenik tutuyoruz.</p></div>
-    <div class="sv reveal"><div class="sv-icon"><i class="fas fa-broom"></i></div><h3>Derin Temizlik</h3><p>Gözden kaçan noktaları derinlemesine arındırıyoruz.</p></div>
-    <div class="sv reveal"><div class="sv-icon"><i class="fas fa-couch"></i></div><h3>Koltuk & Halı Yıkama</h3><p>Tekstil yüzeyleri profesyonel makinelerle yıkıyoruz.</p></div>
-    <div class="sv reveal"><div class="sv-icon"><i class="fas fa-hard-hat"></i></div><h3>İnşaat Sonrası</h3><p>Tadilat sonrası oluşan toz ve kalıntıları temizliyoruz.</p></div>
-    <div class="sv reveal"><div class="sv-icon"><i class="fas fa-calendar-check"></i></div><h3>Periyodik Bakım</h3><p>Düzenli temizlik planı ile mekânınız sürekli bakımlı kalır.</p></div>
-  </div>
-</section>
-
-<!-- SÜREÇ -->
-<section id="surec">
-  <div class="section-head reveal">
-    <div class="eyebrow">Nasıl Çalışıyoruz</div>
-    <h2>4 adımda <em>tertemiz</em></h2>
-  </div>
-  <div class="process-grid">
-    <div class="proc reveal"><div class="proc-num">1</div><h4>Bizi Arayın</h4><p>Telefon veya WhatsApp ile ulaşın.</p></div>
-    <div class="proc reveal"><div class="proc-num">2</div><h4>Teklif Alın</h4><p>Size özel net fiyat teklifi oluşturalım.</p></div>
-    <div class="proc reveal"><div class="proc-num">3</div><h4>Ekip Gelir</h4><p>Deneyimli ekibimiz randevu saatinde kapınızda.</p></div>
-    <div class="proc reveal"><div class="proc-num">4</div><h4>Onaylayın</h4><p>Memnun kalana kadar yanınızdayız.</p></div>
-  </div>
-</section>
-
-<!-- NEDEN BİZ -->
-<section id="neden">
-  <div class="why-photo reveal">
-    <img src="https://www.trabzonkardelentemizlik.com/images/temizlik9.webp" alt="Ekip">
-    <div class="why-photo-badge">
-      <div class="wpb-icon"><i class="fas fa-shield-alt"></i></div>
-      <div class="wpb-text"><strong>Sigortalı & Güvenli Hizmet</strong><span>Tüm ekibimiz sigortalıdır</span></div>
+  <!-- HERO (zaten yüklemede geliyor, scroll animasyonu istemedik) -->
+  <section id="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Trabzon'da Profesyonel Temizlik</div>
+      <h1>Temiz bir<br>ev, <em>özgür</em><br>bir yaşam.</h1>
+      <p class="hero-desc">Kardelen Temizlik ekibi; ev, ofis ve iş yerlerinizi hijyenik, güvenli ve profesyonel biçimde arındırıyor. Siz hayatınıza odaklanın, gerisini biz halledelim.</p>
+      <div class="hero-actions">
+        <a href="tel:05398723318" class="btn-primary"><i class="fas fa-phone-alt"></i> 0539 872 33 18</a>
+        <a href="https://wa.me/905398723318" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
     </div>
-  </div>
-  <div class="why-right reveal">
-    <div class="eyebrow">Neden Kardelen</div>
-    <h2>Trabzon'da <em>güven</em><br>ile tercih edilen marka</h2>
-    <p>10 yılı aşkın deneyimimiz, eğitimli ekibimiz ve kalite standartlarımızla Trabzon'da yüzlerce müşterinin tercih ettiği temizlik firmasıyız.</p>
-    <div class="feat-list">
-      <div class="fi"><div class="fi-icon"><i class="fas fa-leaf"></i></div><div class="fi-text"><strong>Çevre Dostu Ürünler</strong><span>Doğa dostu ürünler</span></div></div>
-      <div class="fi"><div class="fi-icon"><i class="fas fa-shield-virus"></i></div><div class="fi-text"><strong>Sigortalı Ekip</strong><span>Her personel sigortalı</span></div></div>
-      <div class="fi"><div class="fi-icon"><i class="fas fa-clock"></i></div><div class="fi-text"><strong>Dakiklik Garantisi</strong><span>Tam zamanında</span></div></div>
-      <div class="fi"><div class="fi-icon"><i class="fas fa-coins"></i></div><div class="fi-text"><strong>Şeffaf Fiyatlandırma</strong><span>Gizli masraf yok</span></div></div>
+    <div class="hero-right">
+      <div class="hero-photo-wrap"></div>
+      <div class="hero-photo-overlay"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- YORUMLAR -->
-<section id="yorumlar">
-  <div class="section-head reveal">
-    <div class="eyebrow">Müşteri Yorumları</div>
-    <h2>Onlar <em>anlatsın</em></h2>
+  <!-- TÜM DİĞER BÖLÜMLER fade-up sınıfı ile donatıldı (aşağıdan yukarıya) -->
+  <div class="gallery-row fade-up">
+    <img src="https://www.trabzonkardelentemizlik.com/images/temizlik1.webp" alt="Temizlik 1">
+    <img src="https://www.trabzonkardelentemizlik.com/images/temizlik2.webp" alt="Temizlik 2">
+    <img src="https://www.trabzonkardelentemizlik.com/images/temizlik3.webp" alt="Temizlik 3">
+    <img src="https://www.trabzonkardelentemizlik.com/images/temizlik4.webp" alt="Temizlik 4">
+    <img src="https://www.trabzonkardelentemizlik.com/images/temizlik5.webp" alt="Temizlik 5">
+    <img src="https://www.trabzonkardelentemizlik.com/images/temizlik6.webp" alt="Temizlik 6">
+    <img src="https://www.trabzonkardelentemizlik.com/images/temizlik7.webp" alt="Temizlik 7">
+    <img src="https://www.trabzonkardelentemizlik.com/images/temizlik8.webp" alt="Temizlik 8">
   </div>
-  <div class="test-grid">
-    <div class="tc reveal"><div class="tc-stars">★★★★★</div><p>"Evimi ilk kez bu kadar temiz gördüm. Ekip son derece özenli ve dakikti."</p><div class="tc-author"><div class="tc-av">AY</div><div><strong>Ayşe Yılmaz</strong><span>Ev Temizliği</span></div></div></div>
-    <div class="tc reveal"><div class="tc-stars">★★★★★</div><p>"Ofisimizin aylık temizliğini Kardelen yapıyor. Kesinlikle tavsiye ederim."</p><div class="tc-author"><div class="tc-av">MK</div><div><strong>Mehmet Kaya</strong><span>Ofis Temizliği</span></div></div></div>
-    <div class="tc reveal"><div class="tc-stars">★★★★★</div><p>"İnşaat sonrası temizlik için aradım. Harika bir ekip."</p><div class="tc-author"><div class="tc-av">FD</div><div><strong>Fatma Demir</strong><span>İnşaat Sonrası</span></div></div></div>
-  </div>
-</section>
 
-<!-- İLETİŞİM -->
-<section id="iletisim">
-  <div class="ct-left">
-    <div class="eyebrow">İletişim</div>
-    <h2>Ücretsiz teklif<br><em>alın</em></h2>
-    <p>Mekânınıza özel keşif ve fiyat teklifi için formu doldurun.</p>
-    <div class="cinfo">
-      <div class="ci"><div class="ci-ic"><i class="fas fa-map-marker-alt"></i></div><div class="ci-body"><strong>Adres</strong><span>Ayasofya Mahallesi, Trabzon</span></div></div>
-      <div class="ci"><div class="ci-ic"><i class="fas fa-phone"></i></div><div class="ci-body"><strong>Telefon</strong><a href="tel:05398723318">0539 872 33 18</a></div></div>
+  <section id="stats" class="fade-up">
+    <div class="st"><span class="st-num"><span class="counter" data-target="500">0</span><span class="st-suf">+</span></span><div class="st-label">Mutlu Müşteri</div><div class="st-line"></div></div>
+    <div class="st"><span class="st-num"><span class="counter" data-target="1200">0</span><span class="st-suf">+</span></span><div class="st-label">Tamamlanan İş</div><div class="st-line"></div></div>
+    <div class="st"><span class="st-num"><span class="counter" data-target="10">0</span><span class="st-suf">+</span></span><div class="st-label">Yıllık Deneyim</div><div class="st-line"></div></div>
+    <div class="st"><span class="st-num"><span class="counter" data-target="100">0</span><span class="st-suf">%</span></span><div class="st-label">Memnuniyet Garantisi</div><div class="st-line"></div></div>
+  </section>
+
+  <section id="hizmetler" class="fade-up">
+    <div class="section-head"><div class="eyebrow">Hizmetlerimiz</div><h2>Her mekân için<br><em>doğru çözüm</em></h2><p class="section-sub">Konuttan kurumsal alanlara, periyodik bakımdan derin temizliğe kadar ihtiyacınıza özel hizmet sunuyoruz.</p></div>
+    <div class="services-grid">
+      <div class="sv"><div class="sv-icon"><i class="fas fa-home"></i></div><h3>Ev Temizliği</h3><p>Yaşam alanlarınızın her köşesini titizlikle temizliyoruz.</p></div>
+      <div class="sv"><div class="sv-icon"><i class="fas fa-building"></i></div><h3>Ofis & İş Yeri</h3><p>Kurumsal alanları düzenli ve hijyenik tutuyoruz.</p></div>
+      <div class="sv"><div class="sv-icon"><i class="fas fa-broom"></i></div><h3>Derin Temizlik</h3><p>Gözden kaçan noktaları derinlemesine arındırıyoruz.</p></div>
+      <div class="sv"><div class="sv-icon"><i class="fas fa-couch"></i></div><h3>Koltuk & Halı Yıkama</h3><p>Tekstil yüzeyleri profesyonel makinelerle yıkıyoruz.</p></div>
+      <div class="sv"><div class="sv-icon"><i class="fas fa-hard-hat"></i></div><h3>İnşaat Sonrası</h3><p>Tadilat sonrası oluşan toz ve kalıntıları temizliyoruz.</p></div>
+      <div class="sv"><div class="sv-icon"><i class="fas fa-calendar-check"></i></div><h3>Periyodik Bakım</h3><p>Düzenli temizlik planı ile mekânınız sürekli bakımlı kalır.</p></div>
     </div>
-  </div>
-  <div class="ct-right">
-    <h3>Hemen Teklif Al</h3>
-    <div class="fg-row">
-      <div class="fg"><label>Ad Soyad</label><input type="text" id="name" placeholder="Adınız Soyadınız"></div>
-      <div class="fg"><label>Telefon</label><input type="tel" id="phone" placeholder="0539 000 00 00"></div>
+  </section>
+
+  <section id="surec" class="fade-up">
+    <div class="section-head"><div class="eyebrow">Nasıl Çalışıyoruz</div><h2>4 adımda <em>tertemiz</em></h2></div>
+    <div class="process-grid">
+      <div class="proc"><div class="proc-num">1</div><h4>Bizi Arayın</h4><p>Telefon veya WhatsApp ile ulaşın.</p></div>
+      <div class="proc"><div class="proc-num">2</div><h4>Teklif Alın</h4><p>Size özel net fiyat teklifi oluşturalım.</p></div>
+      <div class="proc"><div class="proc-num">3</div><h4>Ekip Gelir</h4><p>Deneyimli ekibimiz randevu saatinde kapınızda.</p></div>
+      <div class="proc"><div class="proc-num">4</div><h4>Onaylayın</h4><p>Memnun kalana kadar yanınızdayız.</p></div>
     </div>
-    <div class="fg"><label>Hizmet Türü</label><select id="service"><option>Ev Temizliği</option><option>Ofis Temizliği</option><option>Derin Temizlik</option><option>Koltuk & Halı Yıkama</option></select></div>
-    <div class="fg"><label>Notunuz</label><textarea id="note" placeholder="Varsa özel isteğiniz..."></textarea></div>
-    <!-- Bu buton artık yeşil (whatsapp rengi) -->
-    <button class="submit-btn" onclick="sendForm()"><i class="fab fa-whatsapp" style="margin-right:8px;"></i> WhatsApp'tan Teklif İste</button>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="fl"><div class="fl-mark"><i class="fas fa-broom"></i></div><div class="fl-name">Kardelen Temizlik</div></div>
-  <p>© 2025 Kardelen Temizlik — Trabzon</p>
-  <p>Ayasofya Mah., Mustafa Reşit Sok. — 0539 872 33 18</p>
-</footer>
+  <section id="neden" class="fade-up">
+    <div class="why-photo"><img src="https://www.trabzonkardelentemizlik.com/images/temizlik9.webp" alt="Ekip"><div class="why-photo-badge"><div class="wpb-icon"><i class="fas fa-shield-alt"></i></div><div class="wpb-text"><strong>Sigortalı & Güvenli Hizmet</strong><span>Tüm ekibimiz sigortalıdır</span></div></div></div>
+    <div class="why-right"><div class="eyebrow">Neden Kardelen</div><h2>Trabzon'da <em>güven</em><br>ile tercih edilen marka</h2><p>10 yılı aşkın deneyimimiz, eğitimli ekibimiz ve kalite standartlarımızla Trabzon'da yüzlerce müşterinin tercih ettiği temizlik firmasıyız.</p><div class="feat-list"><div class="fi"><div class="fi-icon"><i class="fas fa-leaf"></i></div><div class="fi-text"><strong>Çevre Dostu Ürünler</strong><span>Doğa dostu ürünler</span></div></div><div class="fi"><div class="fi-icon"><i class="fas fa-shield-virus"></i></div><div class="fi-text"><strong>Sigortalı Ekip</strong><span>Her personel sigortalı</span></div></div><div class="fi"><div class="fi-icon"><i class="fas fa-clock"></i></div><div class="fi-text"><strong>Dakiklik Garantisi</strong><span>Tam zamanında</span></div></div><div class="fi"><div class="fi-icon"><i class="fas fa-coins"></i></div><div class="fi-text"><strong>Şeffaf Fiyatlandırma</strong><span>Gizli masraf yok</span></div></div></div></div>
+  </section>
 
-<script>
-// REVEAL ANİMASYONLARI
-const revealElements = document.querySelectorAll(
-'.reveal, .reveal-left, .reveal-right, .reveal-zoom'
-);
+  <section id="yorumlar" class="fade-up">
+    <div class="section-head"><div class="eyebrow">Müşteri Yorumları</div><h2>Onlar <em>anlatsın</em></h2></div>
+    <div class="test-grid">
+      <div class="tc"><div class="tc-stars">★★★★★</div><p>"Evimi ilk kez bu kadar temiz gördüm. Ekip son derece özenli ve dakikti."</p><div class="tc-author"><div class="tc-av">AY</div><div><strong>Ayşe Yılmaz</strong><span>Ev Temizliği</span></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><p>"Ofisimizin aylık temizliğini Kardelen yapıyor. Kesinlikle tavsiye ederim."</p><div class="tc-author"><div class="tc-av">MK</div><div><strong>Mehmet Kaya</strong><span>Ofis Temizliği</span></div></div></div>
+      <div class="tc"><div class="tc-stars">★★★★★</div><p>"İnşaat sonrası temizlik için aradım. Harika bir ekip."</p><div class="tc-author"><div class="tc-av">FD</div><div><strong>Fatma Demir</strong><span>İnşaat Sonrası</span></div></div></div>
+    </div>
+  </section>
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+  <section id="iletisim" class="fade-up">
+    <div class="ct-left"><div class="eyebrow">İletişim</div><h2>Ücretsiz teklif<br><em>alın</em></h2><p>Mekânınıza özel keşif ve fiyat teklifi için formu doldurun.</p><div class="cinfo"><div class="ci"><div class="ci-ic"><i class="fas fa-map-marker-alt"></i></div><div class="ci-body"><strong>Adres</strong><span>Ayasofya Mahallesi, Trabzon</span></div></div><div class="ci"><div class="ci-ic"><i class="fas fa-phone"></i></div><div class="ci-body"><strong>Telefon</strong><a href="tel:05398723318">0539 872 33 18</a></div></div></div></div>
+    <div class="ct-right"><h3>Hemen Teklif Al</h3><div class="fg-row"><div class="fg"><label>Ad Soyad</label><input type="text" id="name" placeholder="Adınız Soyadınız"></div><div class="fg"><label>Telefon</label><input type="tel" id="phone" placeholder="0539 000 00 00"></div></div><div class="fg"><label>Hizmet Türü</label><select id="service"><option>Ev Temizliği</option><option>Ofis Temizliği</option><option>Derin Temizlik</option><option>Koltuk & Halı Yıkama</option></select></div><div class="fg"><label>Notunuz</label><textarea id="note" placeholder="Varsa özel isteğiniz..."></textarea></div><button class="submit-btn" onclick="sendForm()"><i class="fab fa-whatsapp" style="margin-right:8px;"></i> WhatsApp'tan Teklif İste</button></div>
+  </section>
 
-    if(entry.isIntersecting){
-      entry.target.classList.add("visible");
+  <footer class="fade-up">
+    <div class="fl"><div class="fl-mark"><i class="fas fa-broom"></i></div><div class="fl-name">Kardelen Temizlik</div></div><p>© 2025 Kardelen Temizlik — Trabzon</p><p>Ayasofya Mah., Mustafa Reşit Sok. — 0539 872 33 18</p>
+  </footer>
+
+  <script>
+    // Scroll animasyonu (Intersection Observer) – fade-up
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -10px 0px' }); // biraz erken tetikleme
+
+    fadeElements.forEach(el => observer.observe(el));
+
+    // Basit sayaç (görünür olduğunda çalışsın)
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = parseInt(counter.getAttribute('data-target'));
+          let count = 0;
+          const update = () => {
+            const increment = target / 40;
+            if (count < target) {
+              count = Math.min(count + increment, target);
+              counter.innerText = Math.floor(count);
+              requestAnimationFrame(() => setTimeout(update, 25));
+            } else {
+              counter.innerText = target;
+            }
+          };
+          update();
+          counterObserver.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => counterObserver.observe(c));
+
+    // WhatsApp form gönderme
+    function sendForm() {
+      const name = document.getElementById('name').value.trim() || "Belirtilmemiş";
+      const phone = document.getElementById('phone').value.trim() || "Belirtilmemiş";
+      const service = document.getElementById('service').value || "Seçilmedi";
+      const note = document.getElementById('note').value.trim() || "Belirtilmemiş";
+      const message = `Merhaba Kardelen Temizlik,%0A%0A*Ad Soyad:* ${name}%0A*Telefon:* ${phone}%0A*Hizmet:* ${service}%0A*Not:* ${note}%0A%0AWeb sitenizden iletiyorum.`;
+      window.open(`https://wa.me/905398723318?text=${message}`, '_blank');
     }
-
-  });
-}, {
-  threshold: 0.15
-});
-
-revealElements.forEach(el => {
-  revealObserver.observe(el);
-});
-
-// WHATSAPP FORM GÖNDERME
-function sendForm() {
-  const name = document.getElementById('name').value.trim() || "Belirtilmemiş";
-  const phone = document.getElementById('phone').value.trim() || "Belirtilmemiş";
-  const service = document.getElementById('service').value || "Seçilmedi";
-  const note = document.getElementById('note').value.trim() || "Belirtilmemiş";
-
-  const message = `Merhaba Kardelen Temizlik,%0A%0A` +
-                  `*Ad Soyad:* ${name}%0A` +
-                  `*Telefon:* ${phone}%0A` +
-                  `*Hizmet:* ${service}%0A` +
-                  `*Not:* ${note}%0A%0A` +
-                  `Web sitenizden iletiyorum.`;
-
-  window.open(`https://wa.me/905398723318?text=${message}`, '_blank');
-}
-
-// BASİT SAYAÇ
-const counters = document.querySelectorAll('.counter');
-counters.forEach(counter => {
-  const target = parseInt(counter.getAttribute('data-target'));
-  let count = 0;
-  const updateCounter = () => {
-    const increment = target / 50;
-    if (count < target) {
-      count = Math.min(count + increment, target);
-      counter.innerText = Math.floor(count);
-      setTimeout(updateCounter, 30);
-    }
-  };
-  
-  const observerCounter = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        updateCounter();
-        observerCounter.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-  
-  observerCounter.observe(counter);
-});
-</script>
-
+  </script>
 </body>
 </html>
