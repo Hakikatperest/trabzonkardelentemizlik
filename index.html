@@ -37,6 +37,10 @@
     </script>
     
     <style>
+        html,body{
+max-width:100%;
+overflow-x:hidden;
+}
         * {
             margin: 0;
             padding: 0;
@@ -568,6 +572,12 @@
             background: linear-gradient(to right bottom, #ffffff 49%, #f0f7ff 50%);
             margin-top: -50px;
         }
+        .service-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:30px;
+margin-top:40px;
+}
         /* SERVICE GRID FIX */
 .service-grid{
 display:grid;
@@ -729,6 +739,77 @@ font-size:1.7rem;
 
 .hero p{
 font-size:0.9rem;
+}
+
+}
+        @media (max-width:768px){
+
+.container{
+padding:0 18px;
+}
+
+.hero{
+background-attachment:scroll;
+}
+
+.hero h1{
+font-size:1.9rem;
+}
+
+.hero .container{
+grid-template-columns:1fr;
+}
+
+.hero-visual{
+height:260px;
+}
+
+.gallery-row{
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.service-grid{
+grid-template-columns:1fr;
+}
+
+.stats-grid{
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.features-grid{
+grid-template-columns:1fr;
+}
+
+.cta-block{
+padding:40px 20px;
+}
+
+.cta-block a{
+margin-left:0 !important;
+display:block;
+margin-top:10px;
+}
+
+.fixed-call-btn,
+.fixed-wa-btn{
+width:60px;
+height:60px;
+font-size:1.5rem;
+bottom:20px;
+}
+
+}
+
+@media (max-width:480px){
+
+.gallery-row{
+grid-template-columns:1fr;
+}
+
+.stats-grid{
+grid-template-columns:1fr;
 }
 
 }
